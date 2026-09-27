@@ -3,227 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Donuts</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- font -->
+
     <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="Donuts.css">
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
-                <i class="fa-solid fa-arrow-left"></i> Back
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="Offerpage.html">Arrivals</a></li>
-                    <li><a href="customise.html">Customise</a></li>
-                    <li><a href="Aboutus.html">About us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li>
-                        <a href="cart.html" class="cart-icon-btn" title="View Cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span class="cart-pill" id="cart-count">0</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="menu-section">
-        <h2>Explore Our Donuts</h2>
+<header>
+    <div class="header-container">
 
-        <div class="cake-box">
-            <ul>
-                <!-- Classic Donut -->
+        <a href="javascript:void(0);"
+           onclick="history.back()"
+           class="back-pill-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+            Back
+        </a>
+
+        <nav>
+            <ul class="nav-links">
+
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="Offerpage.html">Arrivals</a></li>
+                <li><a href="customise.html">Customise</a></li>
+                <li><a href="Aboutus.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
                 <li>
-                    <span>Classic Donut</span>
-                    <div class="item-options">
-                        <div class="custom-cake-dropdown" onclick="toggleDonutDropdown(event, this)">
-                            <div class="dropdown-trigger">
-                                <span class="selected-val">Small</span>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="dropdown-options">
-                                <li data-size="small" onclick="selectDonutSize(event, this, {small:50, medium:90, large:130})">Small</li>
-                                <li data-size="medium" onclick="selectDonutSize(event, this, {small:50, medium:90, large:130})">Medium</li>
-                                <li data-size="large" onclick="selectDonutSize(event, this, {small:50, medium:90, large:130})">Large</li>
-                            </ul>
-                            <input type="hidden" class="donut-size-input" value="small">
-                        </div>
-                        <span class="price">₹50</span>
-                    </div>
-                    <div class="item-buttons">
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
+                    <a href="cart.html"
+                       class="cart-icon-btn"
+                       title="View Cart">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span class="cart-pill"
+                              id="cart-count">0</span>
+
+                    </a>
                 </li>
 
-                <!-- Chocolate Donut -->
-                <li>
-                    <span>Chocolate Donut</span>
-                    <div class="item-options">
-                        <div class="custom-cake-dropdown" onclick="toggleDonutDropdown(event, this)">
-                            <div class="dropdown-trigger">
-                                <span class="selected-val">Small</span>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="dropdown-options">
-                                <li data-size="small" onclick="selectDonutSize(event, this, {small:70, medium:110, large:160})">Small</li>
-                                <li data-size="medium" onclick="selectDonutSize(event, this, {small:70, medium:110, large:160})">Medium</li>
-                                <li data-size="large" onclick="selectDonutSize(event, this, {small:70, medium:110, large:160})">Large</li>
-                            </ul>
-                            <input type="hidden" class="donut-size-input" value="small">
-                        </div>
-                        <span class="price">₹70</span>
-                    </div>
-                    <div class="item-buttons">
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                </li>
-
-                <!-- Dark Diamond Donut -->
-                <li>
-                    <span>Dark Diamond Donut</span>
-                    <div class="item-options">
-                        <div class="custom-cake-dropdown" onclick="toggleDonutDropdown(event, this)">
-                            <div class="dropdown-trigger">
-                                <span class="selected-val">Small</span>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="dropdown-options">
-                                <li data-size="small" onclick="selectDonutSize(event, this, {small:90, medium:140, large:190})">Small</li>
-                                <li data-size="medium" onclick="selectDonutSize(event, this, {small:90, medium:140, large:190})">Medium</li>
-                                <li data-size="large" onclick="selectDonutSize(event, this, {small:90, medium:140, large:190})">Large</li>
-                            </ul>
-                            <input type="hidden" class="donut-size-input" value="small">
-                        </div>
-                        <span class="price">₹90</span>
-                    </div>
-                    <div class="item-buttons">
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                </li>
-
-                <!-- White Choconut Donut -->
-                <li>
-                    <span>White Choconut Donut</span>
-                    <div class="item-options">
-                        <div class="custom-cake-dropdown" onclick="toggleDonutDropdown(event, this)">
-                            <div class="dropdown-trigger">
-                                <span class="selected-val">Small</span>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="dropdown-options">
-                                <li data-size="small" onclick="selectDonutSize(event, this, {small:85, medium:135, large:185})">Small</li>
-                                <li data-size="medium" onclick="selectDonutSize(event, this, {small:85, medium:135, large:185})">Medium</li>
-                                <li data-size="large" onclick="selectDonutSize(event, this, {small:85, medium:135, large:185})">Large</li>
-                            </ul>
-                            <input type="hidden" class="donut-size-input" value="small">
-                        </div>
-                        <span class="price">₹85</span>
-                    </div>
-                    <div class="item-buttons">
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                </li>
-
-                <!-- Oreo Donut -->
-                <li>
-                    <span>Oreo Donut</span>
-                    <div class="item-options">
-                        <div class="custom-cake-dropdown" onclick="toggleDonutDropdown(event, this)">
-                            <div class="dropdown-trigger">
-                                <span class="selected-val">Small</span>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="dropdown-options">
-                                <li data-size="small" onclick="selectDonutSize(event, this, {small:95, medium:145, large:200})">Small</li>
-                                <li data-size="medium" onclick="selectDonutSize(event, this, {small:95, medium:145, large:200})">Medium</li>
-                                <li data-size="large" onclick="selectDonutSize(event, this, {small:95, medium:145, large:200})">Large</li>
-                            </ul>
-                            <input type="hidden" class="donut-size-input" value="small">
-                        </div>
-                        <span class="price">₹95</span>
-                    </div>
-                    <div class="item-buttons">
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                </li>
-
-                <!-- Strawberry Donut -->
-                <li>
-                    <span>Strawberry Donut</span>
-                    <div class="item-options">
-                        <div class="custom-cake-dropdown" onclick="toggleDonutDropdown(event, this)">
-                            <div class="dropdown-trigger">
-                                <span class="selected-val">Small</span>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <ul class="dropdown-options">
-                                <li data-size="small" onclick="selectDonutSize(event, this, {small:75, medium:125, large:175})">Small</li>
-                                <li data-size="medium" onclick="selectDonutSize(event, this, {small:75, medium:125, large:175})">Medium</li>
-                                <li data-size="large" onclick="selectDonutSize(event, this, {small:75, medium:125, large:175})">Large</li>
-                            </ul>
-                            <input type="hidden" class="donut-size-input" value="small">
-                        </div>
-                        <span class="price">₹75</span>
-                    </div>
-                    <div class="item-buttons">
-                        <button>Add to Cart</button>
-                        <button>Buy Now</button>
-                    </div>
-                </li>
             </ul>
-        </div>
-    </section>
-    
-    <script src="Donuts.js"></script>
-    <script>
-        function toggleDonutDropdown(e, dropdown) {
-            e.stopPropagation();
-            document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
-                if (d !== dropdown) d.classList.remove('open');
-            });
-            dropdown.classList.toggle('open');
-        }
+        </nav>
 
-        function selectDonutSize(e, optionEl, priceObj) {
-            e.stopPropagation();
-            const dropdown = optionEl.closest('.custom-cake-dropdown');
-            const size = optionEl.getAttribute('data-size');
-            
-            dropdown.querySelector('.selected-val').textContent = optionEl.textContent;
-            dropdown.querySelector('.donut-size-input').value = size;
-            dropdown.classList.remove('open');
+    </div>
+</header>
 
-            const priceElement = dropdown.closest('li').querySelector('.price');
-            if (priceElement && priceObj[size]) {
-                priceElement.textContent = '₹' + priceObj[size];
-            }
-        }
 
-        window.addEventListener('click', () => {
-            document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
-        });
+<section class="menu-section">
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-            const badge = document.getElementById("cart-count");
-            if (badge) badge.textContent = count;
-        });
-    </script>
+    <h2>Explore Our Donuts</h2>
+
+    <div class="cake-box">
+
+        <ul>
+
+            <!-- Classic Donut -->
+            <li data-name="Classic Donut">
+
+                <span>Classic Donut</span>
+
+                <div class="item-options">
+
+                    <div class="custom-cake-dropdown"
+                         data-small="50"
+                         data-medium="90"
+                         data-large="130">
+
+                        <div class="dropdown-trigger">
+
+                            <span class="selected-val">
+                                Small
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                        <ul class="dropdown-options">
+
+                            <li data-size="small">Small</li>
+                            <li data-size="medium">Medium</li>
+                            <li data-size="large">Large</li>
+
+                        </ul>
+
+                        <input type="hidden"
+                               class="donut-size-input"
+                               value="small">
+
+                    </div>
+
+                    <span class="price">₹50</span>
+
+                </div>
+
+                <div class="item-buttons">
+
+                    <button class="add-cart-btn"
+                            type="button">
+                        Add to Cart
+                    </button>
+
+                    <button class="buy-now-btn"
+                            type="button">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </li>
+
+
+            <!-- Chocolate Donut -->
+            <li data-name="Chocolate Donut">
+
+                <span>Chocolate Donut</span>
+
+                <div class="item-options">
+
+                    <div class="custom-cake-dropdown"
+                         data-small="70"
+                         data-medium="110"
+                         data-large="160">
+
+                        <div class="dropdown-trigger">
+
+                            <span class="selected-val">
+                                Small
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                        <ul class="dropdown-options">
+
+                            <li data-size="small">Small</li>
+                            <li data-size="medium">Medium</li>
+                            <li data-size="large">Large</li>
+
+                        </ul>
+
+                        <input type="hidden"
+                               class="donut-size-input"
+                               value="small">
+
+                    </div>
+
+                    <span class="price">₹70</span>
+
+                </div>
+
+                <div class="item-buttons">
+
+                    <button class="add-cart-btn"
+                            type="button">
+                        Add to Cart
+                    </button>
+
+                    <button class="buy-now-btn"
+                            type="button">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </li>
+
+
+            <!-- Dark Diamond Donut -->
+            <li data-name="Dark Diamond Donut">
+
+                <span>Dark Diamond Donut</span>
+
+                <div class="item-options">
+
+                    <div class="custom-cake-dropdown"
+                         data-small="90"
+                         data-medium="140"
+                         data-large="190">
+
+                        <div class="dropdown-trigger">
+
+                            <span class="selected-val">
+                                Small
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                        <ul class="dropdown-options">
+
+                            <li data-size="small">Small</li>
+                            <li data-size="medium">Medium</li>
+                            <li data-size="large">Large</li>
+
+                        </ul>
+
+                        <input type="hidden"
+                               class="donut-size-input"
+                               value="small">
+
+                    </div>
+
+                    <span class="price">₹90</span>
+
+                </div>
+
+                <div class="item-buttons">
+
+                    <button class="add-cart-btn"
+                            type="button">
+                        Add to Cart
+                    </button>
+
+                    <button class="buy-now-btn"
+                            type="button">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </li>
+
+
+            <!-- White Choconut Donut -->
+            <li data-name="White Choconut Donut">
+
+                <span>White Choconut Donut</span>
+
+                <div class="item-options">
+
+                    <div class="custom-cake-dropdown"
+                         data-small="85"
+                         data-medium="135"
+                         data-large="185">
+
+                        <div class="dropdown-trigger">
+
+                            <span class="selected-val">
+                                Small
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                        <ul class="dropdown-options">
+
+                            <li data-size="small">Small</li>
+                            <li data-size="medium">Medium</li>
+                            <li data-size="large">Large</li>
+
+                        </ul>
+
+                        <input type="hidden"
+                               class="donut-size-input"
+                               value="small">
+
+                    </div>
+
+                    <span class="price">₹85</span>
+
+                </div>
+
+                <div class="item-buttons">
+
+                    <button class="add-cart-btn"
+                            type="button">
+                        Add to Cart
+                    </button>
+
+                    <button class="buy-now-btn"
+                            type="button">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </li>
+
+
+            <!-- Oreo Donut -->
+            <li data-name="Oreo Donut">
+
+                <span>Oreo Donut</span>
+
+                <div class="item-options">
+
+                    <div class="custom-cake-dropdown"
+                         data-small="95"
+                         data-medium="145"
+                         data-large="200">
+
+                        <div class="dropdown-trigger">
+
+                            <span class="selected-val">
+                                Small
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                        <ul class="dropdown-options">
+
+                            <li data-size="small">Small</li>
+                            <li data-size="medium">Medium</li>
+                            <li data-size="large">Large</li>
+
+                        </ul>
+
+                        <input type="hidden"
+                               class="donut-size-input"
+                               value="small">
+
+                    </div>
+
+                    <span class="price">₹95</span>
+
+                </div>
+
+                <div class="item-buttons">
+
+                    <button class="add-cart-btn"
+                            type="button">
+                        Add to Cart
+                    </button>
+
+                    <button class="buy-now-btn"
+                            type="button">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </li>
+
+
+            <!-- Strawberry Donut -->
+            <li data-name="Strawberry Donut">
+
+                <span>Strawberry Donut</span>
+
+                <div class="item-options">
+
+                    <div class="custom-cake-dropdown"
+                         data-small="75"
+                         data-medium="125"
+                         data-large="175">
+
+                        <div class="dropdown-trigger">
+
+                            <span class="selected-val">
+                                Small
+                            </span>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                        <ul class="dropdown-options">
+
+                            <li data-size="small">Small</li>
+                            <li data-size="medium">Medium</li>
+                            <li data-size="large">Large</li>
+
+                        </ul>
+
+                        <input type="hidden"
+                               class="donut-size-input"
+                               value="small">
+
+                    </div>
+
+                    <span class="price">₹75</span>
+
+                </div>
+
+                <div class="item-buttons">
+
+                    <button class="add-cart-btn"
+                            type="button">
+                        Add to Cart
+                    </button>
+
+                    <button class="buy-now-btn"
+                            type="button">
+                        Buy Now
+                    </button>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<script src="Donuts.js"></script>
+
 </body>
 </html>
