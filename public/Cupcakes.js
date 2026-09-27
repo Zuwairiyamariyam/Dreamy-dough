@@ -209,9 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 updateCartBadge();
 
-                alert(
-                    `${baseName} (${selectedText}) added to cart! 🧁`
-                );
+                alert(`${name} added to cart! 🧁`);
 
             });
 
