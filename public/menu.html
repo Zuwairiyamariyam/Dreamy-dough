@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Dreamy Dough</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+    <!-- Floating Bakery Doodles -->
+    <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+    <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+    <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+    <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+
+            <nav>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html" class="active">Menu</a></li>
+    <li><a href="Offerpage.html">Arrivals</a></li>
+    <li><a href="customise.html">Customise</a></li>
+    <li><a href="Aboutus.html">About us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+  <a href="cart.html" class="cart-icon-btn" title="View Cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-pill" id="cart-count">0</span>
+  </a>
+</li>
+  </ul>
+</nav>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <!-- First Row -->
+        <div class="menu-items-row">
+            <div class="menu-item">
+                <a href="Creamycakes.html">
+                    <img src="images/Cakes.jpg" alt="Cakes">
+                </a>
+                <h3>Creamy Cakes</h3>
+            </div>
+            <div class="menu-item">
+                <a href="Donuts.html">
+                    <img src="images/Donuts.jpg" alt="Donuts">
+                </a>
+                <h3>Donuts</h3>
+            </div>
+            <div class="menu-item">
+                <a href="Fudgybrownies.html">
+                    <img src="images/Brownies.jpg" alt="Brownies">
+                </a>
+                <h3>Fudgy Brownies</h3>
+            </div>
+            <div class="menu-item">
+                <a href="Cookies.html">
+                    <img src="images/Cookies.jpg" alt="Cookies">
+                </a>
+                <h3>Cookies</h3>
+            </div>
+        </div>
+
+        <div class="menu-items-row">
+            <div class="menu-item">
+                <a href="Cupcakes.html">
+                    <img src="images/Cupcakes.jpg" alt="Cupcakes">
+                </a>
+                <h3>Cupcakes</h3>
+            </div>
+            <div class="menu-item">
+                <a href="Macarons.html">
+                    <img src="images/Macarons.jpg" alt="Macarons">
+                </a>
+                <h3>Macarons</h3>
+            </div>
+            <div class="menu-item">
+                <a href="Swissrolls.html">
+                    <img src="images/Swissroll.jpg" alt="Swiss Rolls">
+                </a>
+                <h3>Swiss Rolls</h3>
+            </div>
+            <div class="menu-item">
+                <a href="Waffles.html">
+                    <img src="images/Waffles.jpg" alt="Waffles">
+                </a>
+                <h3>Waffles</h3>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.getElementById("menu-cart-count");
+            if (badge) badge.textContent = count;
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
+});
+    </script>
+</body>
+</html>

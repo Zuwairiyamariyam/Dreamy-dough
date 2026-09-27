@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creamy Cakes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Creamycakes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Offerpage.html">Arrivals</a></li>
+                    <li><a href="customise.html">Customise</a></li>
+                    <li><a href="Aboutus.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon-btn" title="View Cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-pill" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h2>Explore Our Cakes</h2>
+
+        <div class="cake-box">
+            <ul>
+                <!-- Chocolate Cake -->
+                <li>
+                    <span>Chocolate Cake</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCakeDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectCakeQty(event, this, 400)">1 Kg</li>
+                                <li data-value="2" onclick="selectCakeQty(event, this, 400)">2 Kg</li>
+                                <li data-value="3" onclick="selectCakeQty(event, this, 400)">3 Kg</li>
+                                <li data-value="4" onclick="selectCakeQty(event, this, 400)">4 Kg</li>
+                                <li data-value="5" onclick="selectCakeQty(event, this, 400)">5 Kg</li>
+                                <li data-value="6" onclick="selectCakeQty(event, this, 400)">6 Kg</li>
+                            </ul>
+                            <input type="hidden" class="cake-qty-input" value="1" data-base-price="400">
+                        </div>
+                        <span class="price">₹400</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Red Velvet Cake -->
+                <li>
+                    <span>Red Velvet Cake</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCakeDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectCakeQty(event, this, 600)">1 Kg</li>
+                                <li data-value="2" onclick="selectCakeQty(event, this, 600)">2 Kg</li>
+                                <li data-value="3" onclick="selectCakeQty(event, this, 600)">3 Kg</li>
+                                <li data-value="4" onclick="selectCakeQty(event, this, 600)">4 Kg</li>
+                                <li data-value="5" onclick="selectCakeQty(event, this, 600)">5 Kg</li>
+                                <li data-value="6" onclick="selectCakeQty(event, this, 600)">6 Kg</li>
+                            </ul>
+                            <input type="hidden" class="cake-qty-input" value="1" data-base-price="600">
+                        </div>
+                        <span class="price">₹600</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Cheese Cake -->
+                <li>
+                    <span>Cheese Cake</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCakeDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectCakeQty(event, this, 500)">1 Kg</li>
+                                <li data-value="2" onclick="selectCakeQty(event, this, 500)">2 Kg</li>
+                                <li data-value="3" onclick="selectCakeQty(event, this, 500)">3 Kg</li>
+                                <li data-value="4" onclick="selectCakeQty(event, this, 500)">4 Kg</li>
+                                <li data-value="5" onclick="selectCakeQty(event, this, 500)">5 Kg</li>
+                                <li data-value="6" onclick="selectCakeQty(event, this, 500)">6 Kg</li>
+                            </ul>
+                            <input type="hidden" class="cake-qty-input" value="1" data-base-price="500">
+                        </div>
+                        <span class="price">₹500</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Oreo Cream Cake -->
+                <li>
+                    <span>Oreo Cream Cake</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCakeDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectCakeQty(event, this, 550)">1 Kg</li>
+                                <li data-value="2" onclick="selectCakeQty(event, this, 550)">2 Kg</li>
+                                <li data-value="3" onclick="selectCakeQty(event, this, 550)">3 Kg</li>
+                                <li data-value="4" onclick="selectCakeQty(event, this, 550)">4 Kg</li>
+                                <li data-value="5" onclick="selectCakeQty(event, this, 550)">5 Kg</li>
+                                <li data-value="6" onclick="selectCakeQty(event, this, 550)">6 Kg</li>
+                            </ul>
+                            <input type="hidden" class="cake-qty-input" value="1" data-base-price="550">
+                        </div>
+                        <span class="price">₹550</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Caramel Choco Cake -->
+                <li>
+                    <span>Caramel Choco Cake</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCakeDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectCakeQty(event, this, 450)">1 Kg</li>
+                                <li data-value="2" onclick="selectCakeQty(event, this, 450)">2 Kg</li>
+                                <li data-value="3" onclick="selectCakeQty(event, this, 450)">3 Kg</li>
+                                <li data-value="4" onclick="selectCakeQty(event, this, 450)">4 Kg</li>
+                                <li data-value="5" onclick="selectCakeQty(event, this, 450)">5 Kg</li>
+                                <li data-value="6" onclick="selectCakeQty(event, this, 450)">6 Kg</li>
+                            </ul>
+                            <input type="hidden" class="cake-qty-input" value="1" data-base-price="450">
+                        </div>
+                        <span class="price">₹450</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Molten Lava Cake -->
+                <li>
+                    <span>Molten Lava Cake</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCakeDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectCakeQty(event, this, 650)">1 Kg</li>
+                                <li data-value="2" onclick="selectCakeQty(event, this, 650)">2 Kg</li>
+                                <li data-value="3" onclick="selectCakeQty(event, this, 650)">3 Kg</li>
+                                <li data-value="4" onclick="selectCakeQty(event, this, 650)">4 Kg</li>
+                                <li data-value="5" onclick="selectCakeQty(event, this, 650)">5 Kg</li>
+                                <li data-value="6" onclick="selectCakeQty(event, this, 650)">6 Kg</li>
+                            </ul>
+                            <input type="hidden" class="cake-qty-input" value="1" data-base-price="650">
+                        </div>
+                        <span class="price">₹650</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button>Add to Cart</button>
+                        <button>Buy Now</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <script src="Creamycakes.js"></script>
+    <script>
+        function toggleCakeDropdown(e, dropdown) {
+            e.stopPropagation();
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+            });
+            dropdown.classList.toggle('open');
+        }
+
+        function selectCakeQty(e, optionEl, basePrice) {
+            e.stopPropagation();
+            const dropdown = optionEl.closest('.custom-cake-dropdown');
+            const qty = parseInt(optionEl.getAttribute('data-value'), 10);
+            
+            dropdown.querySelector('.selected-val').textContent = optionEl.textContent;
+            dropdown.querySelector('.cake-qty-input').value = qty;
+            dropdown.classList.remove('open');
+
+            const priceElement = dropdown.closest('li').querySelector('.price');
+            if (priceElement) {
+                priceElement.textContent = '₹' + (basePrice * qty);
+            }
+        }
+
+        window.addEventListener('click', () => {
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.getElementById("cart-count");
+            if (badge) badge.textContent = count;
+        });
+    </script>
+</body>
+</html>

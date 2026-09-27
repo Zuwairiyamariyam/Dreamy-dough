@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customise Your Cake | Dreamy Dough</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="customise.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Floating Bakery Doodles -->
+  <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+  <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+  <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+  <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="Offerpage.html">Arrivals</a></li>
+          <li><a href="customise.html" class="active">Customise</a></li>
+          <li><a href="Aboutus.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+  <a href="cart.html" class="cart-icon-btn" title="View Cart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-pill" id="cart-count">0</span>
+  </a>
+</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="customise-main-wrapper">
+    <div class="custom-title-row">
+      <h1 class="script-title">Design Your Dream Cake</h1>
+      <p class="subtitle">Handcrafting bespoke masterpieces for your life's sweetest milestones</p>
+    </div>
+    <form id="cake-customise-form" class="custom-3col-form" onsubmit="handleCustomOrderSubmit(event)">
+      
+      <div class="form-col-card">
+        <h3 class="form-block-heading"><i class="fa-solid fa-wand-magic-sparkles"></i> 1. Cake & Theme</h3>
+        
+        <div class="form-group">
+          <label>Occasion / Event *</label>
+          <div class="custom-dropdown" id="occasionDropdown">
+            <div class="dropdown-selected" onclick="toggleCustomDropdown('occasionDropdown')">
+              <span id="selectedOccasionText">Birthday Celebration</span>
+              <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+            </div>
+            <ul class="dropdown-menu">
+              <li onclick="selectCustomOption('occasionDropdown', 'occasion', 'selectedOccasionText', 'Birthday', 'Birthday Celebration')">Birthday Celebration</li>
+              <li onclick="selectCustomOption('occasionDropdown', 'occasion', 'selectedOccasionText', 'Wedding', 'Wedding / Reception')">Wedding / Reception</li>
+              <li onclick="selectCustomOption('occasionDropdown', 'occasion', 'selectedOccasionText', 'Anniversary', 'Anniversary')">Anniversary</li>
+              <li onclick="selectCustomOption('occasionDropdown', 'occasion', 'selectedOccasionText', 'Baby Shower', 'Baby Shower / Gender Reveal')">Baby Shower / Gender Reveal</li>
+              <li onclick="selectCustomOption('occasionDropdown', 'occasion', 'selectedOccasionText', 'Corporate', 'Corporate / Milestone Celebration')">Corporate / Milestone Celebration</li>
+              <li onclick="selectCustomOption('occasionDropdown', 'occasion', 'selectedOccasionText', 'Special Party', 'Personal Theme Party')">Personal Theme Party</li>
+            </ul>
+            <input type="hidden" id="occasion" name="occasion" value="Birthday" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Cake Size / Weight *</label>
+          <div class="custom-dropdown" id="weightDropdown">
+            <div class="dropdown-selected" onclick="toggleCustomDropdown('weightDropdown')">
+              <span id="selectedWeightText">1.0 Kg (Serves 6 - 8)</span>
+              <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+            </div>
+            <ul class="dropdown-menu">
+              <li onclick="selectCustomOption('weightDropdown', 'weight', 'selectedWeightText', '1', '1.0 Kg (Serves 6 - 8)')">1.0 Kg (Serves 6 - 8)</li>
+              <li onclick="selectCustomOption('weightDropdown', 'weight', 'selectedWeightText', '1.5', '1.5 Kg (Serves 10 - 12)')">1.5 Kg (Serves 10 - 12)</li>
+              <li onclick="selectCustomOption('weightDropdown', 'weight', 'selectedWeightText', '2', '2.0 Kg (Serves 14 - 16)')">2.0 Kg (Serves 14 - 16)</li>
+              <li onclick="selectCustomOption('weightDropdown', 'weight', 'selectedWeightText', '3', '3.0 Kg 2-Tier (Serves 20 - 25)')">3.0 Kg 2-Tier (Serves 20 - 25)</li>
+              <li onclick="selectCustomOption('weightDropdown', 'weight', 'selectedWeightText', '4', '4.0 Kg 2-Tier (Serves 30 - 35)')">4.0 Kg 2-Tier (Serves 30 - 35)</li>
+              <li onclick="selectCustomOption('weightDropdown', 'weight', 'selectedWeightText', '5+', '5.0+ Kg Grand 3-Tier (Large Event)')">5.0+ Kg Grand 3-Tier (Large Event)</li>
+            </ul>
+            <input type="hidden" id="weight" name="weight" value="1" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="color-theme">Preferred Theme & Colors *</label>
+          <input type="text" id="color-theme" placeholder="e.g. Pastel Pink, Vintage Gold" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inscription">Message / Name on Cake</label>
+          <input type="text" id="inscription" placeholder="e.g. Happy 21st Birthday Diya!">
+        </div>
+
+        <div class="form-group">
+          <label for="design-desc">Vision & Toppings *</label>
+          <textarea id="design-desc" rows="3" placeholder="Describe chocolates, floral style, textures." oninput="autoResizeTextarea(this)" required></textarea>
+        </div>
+      </div>
+      <div class="form-col-card">
+        <h3 class="form-block-heading"><i class="fa-solid fa-leaf"></i> 2. Baking & Reference</h3>
+        
+        <div class="dietary-option-box">
+          <span class="dietary-label">Baking Base:</span>
+          <div class="radio-pill-group">
+            <label class="radio-pill">
+              <input type="radio" name="egg_choice" value="Eggless" checked>
+              <span><i class="fa-solid fa-seedling"></i> 100% Eggless</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="egg_choice" value="Regular (With Egg)">
+              <span><i class="fa-solid fa-egg"></i> With Egg</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="dietary-option-box">
+          <span class="dietary-label">Freshness & Prep:</span>
+          <div class="radio-pill-group">
+            <label class="radio-pill">
+              <input type="radio" name="preservative_choice" value="Zero Preservatives" checked>
+              <span><i class="fa-solid fa-heart-pulse"></i> Zero Preservatives</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="preservative_choice" value="Standard Bakery Prep">
+              <span><i class="fa-solid fa-check"></i> Standard Artisan Prep</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group file-upload-group">
+          <label for="reference-photo">Reference Photo / Sketch (Optional)</label>
+          <div class="file-upload-wrapper">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <p>Upload your cake inspiration</p>
+            <span>PNG, JPG, JPEG</span>
+            <input type="file" id="reference-photo" accept="image/*">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-col-card">
+        <h3 class="form-block-heading"><i class="fa-solid fa-truck-fast"></i> 3. Delivery & Order</h3>
+        
+        <div class="form-group">
+          <label for="cust-name">Your Full Name *</label>
+          <input type="text" id="cust-name" placeholder="Enter contact name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cust-phone">WhatsApp / Phone *</label>
+          <input type="tel" id="cust-phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cust-address">Delivery Address *</label>
+          <textarea id="cust-address" rows="3" placeholder="Street, Apartment and pincode." oninput="autoResizeTextarea(this)" required></textarea>
+        </div>
+
+        <div class="submit-action-area">
+          <button type="submit" class="btn-submit-custom">
+            <span>Send Custom Bake Request</span>
+            <i class="fa-solid fa-cake-candles"></i>
+          </button>
+          <p class="submit-disclaimer">
+  <i class="fa-solid fa-clock-rotate-left"></i> The bill will generate in 15 minutes.<br>
+  Once you pay, get freshly prepared in 3-4 hours!
+</p>
+        </div>
+      </div>
+
+    </form>
+  </main>
+
+  <div id="order-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-icon-wrap">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h2>Request Received!</h2>
+      <p class="modal-highlight-text">
+        Thank you, <strong id="modal-user-name">Friend</strong>! Your bespoke cake details have been securely passed to our kitchen studio.
+      </p>
+      <div class="modal-timeline-box">
+        <div class="timeline-row">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span><b>Step 1:</b> The bill amount will be sent to your WhatsApp number in <b>15 minutes</b>. Kindly pay and proceed.</span>
+        </div>
+        <div class="timeline-row">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span><b>Step 2:</b> Once paid, your treat will be freshly baked & delivered within <b>3–4 hours</b>!</span>
+        </div>
+      </div>
+      <button class="btn-close-modal" onclick="closeOrderModal()">Back to Menu</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Dreamy Dough. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+      const badge = document.getElementById("custom-cart-count");
+      if (badge) badge.textContent = count;
+    });
+
+    function toggleCustomDropdown(id) {
+      document.querySelectorAll('.custom-dropdown').forEach(d => {
+        if (d.id !== id) d.classList.remove('open');
+      });
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('open');
+    }
+
+    function selectCustomOption(dropdownId, hiddenInputId, textId, value, label) {
+      document.getElementById(textId).textContent = label;
+      document.getElementById(hiddenInputId).value = value;
+      document.getElementById(dropdownId).classList.remove('open');
+    }
+
+    window.addEventListener('click', function(e) {
+      document.querySelectorAll('.custom-dropdown').forEach(d => {
+        if (!d.contains(e.target)) {
+          d.classList.remove('open');
+        }
+      });
+    });
+
+    function autoResizeTextarea(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    function handleCustomOrderSubmit(e) {
+      e.preventDefault();
+      const userName = document.getElementById("cust-name").value;
+      document.getElementById("modal-user-name").textContent = userName;
+      document.getElementById("order-modal").style.display = "flex";
+      document.getElementById("cake-customise-form").reset();
+    }
+
+    function closeOrderModal() {
+      document.getElementById("order-modal").style.display = "none";
+      window.location.href = "menu.html";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>New Arrivals | Dreamy Dough</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Damion&family=Josefin+Sans:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+
+    :root {
+      --primary-dark: #351c14;
+      --cocoa: #4b2e2e;
+      --cocoa-hover: #5d3838;
+      --gold-warm: #d49a4f;
+      --cream-bg: #fef5e1;
+      --card-bg: #ffffff;
+      --border-soft: #ebdccf;
+      --text-dark: #2c1a14;
+      --text-muted: #857268;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--cream-bg) url('images/bakerybg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-dark);
+      position: relative;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ambient-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-top-left {
+      width: 450px;
+      height: 450px;
+      background: #f1bf85;
+      top: -80px;
+      left: -80px;
+    }
+
+    .glow-bottom-right {
+      width: 550px;
+      height: 550px;
+      background: #c78864;
+      bottom: -100px;
+      right: -100px;
+    }
+
+    /* Floating Bakery Doodles */
+    .floating-doodle {
+      position: fixed;
+      color: rgba(75, 46, 46, 0.08);
+      font-size: 4.5rem;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .doodle-1 { top: 16%; left: 4%; transform: rotate(-15deg); }
+    .doodle-2 { top: 72%; left: 5%; transform: rotate(18deg); }
+    .doodle-3 { top: 20%; right: 4%; transform: rotate(12deg); }
+    .doodle-4 { top: 75%; right: 6%; transform: rotate(-25deg); }
+
+    header.site-header {
+      width: 100%;
+      height: 70px;
+      background-color: var(--cocoa);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(53, 28, 20, 0.2);
+      display: flex;
+      align-items: center;
+      padding: 0 45px;
+      flex-shrink: 0;
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .header-container nav {
+      margin-left: auto;
+    }
+
+    .back-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 8px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: background 0.3s ease, color 0.3s ease;
+      transform: none !important;
+    }
+
+    .back-pill-btn:hover {
+      background: var(--gold-warm);
+      color: var(--primary-dark);
+      transform: none !important;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #FFD7D7;
+    }
+
+    .cart-icon-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.3rem;
+      padding: 6px 8px;
+      transition: color 0.3s ease;
+      transform: none !important;
+    }
+
+    .cart-icon-btn:hover {
+      color: var(--gold-warm);
+      transform: none !important;
+    }
+
+    .cart-icon-btn .cart-pill {
+      position: absolute;
+      top: -4px;
+      right: -8px;
+      background-color: #fedbb2;
+      color: #351c14;
+      font-size: 0.72rem;
+      font-weight: 700;
+      min-width: 19px;
+      height: 19px;
+      line-height: 18px;
+      border-radius: 50%;
+      text-align: center;
+      padding: 0 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+      border: 1.5px solid var(--cocoa);
+    }
+
+    .arrivals-header {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+      max-width: 1200px;
+      margin: 15px auto 10px auto; 
+      padding: 0 25px;
+      width: 100%;
+    }
+
+    .arrivals-header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--cocoa);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .arrivals-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    .offers {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 30px;
+      padding: 5px 25px 40px 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+
+    .offer-card {
+      position: relative;
+      background: var(--card-bg);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(75, 46, 46, 0.07);
+      border: 1px solid var(--border-soft);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transform: none !important;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .img-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+
+    .offer-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .img-wrapper:hover img {
+      transform: scale(1.08);
+    }
+
+    .offer-card:hover img {
+      transform: scale(1) !important;
+    }
+
+    .offer-card .img-wrapper:hover img {
+      transform: scale(1.08) !important;
+    }
+
+    .card-ribbon {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--cocoa);
+      color: #fedbb2;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+
+    .offer-card h3 {
+      font-family: 'Libre Baskerville', serif !important;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .offer-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .price-wrap {
+      margin-bottom: 16px;
+    }
+
+    .price {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--cocoa);
+      letter-spacing: -0.5px;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-add-cart {
+      flex: 1;
+      background: #fdf5ea;
+      color: var(--cocoa);
+      border: 1.5px solid var(--border-soft);
+      padding: 11px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-add-cart:hover {
+      background: #faecda;
+      border-color: var(--gold-warm);
+    }
+
+    .btn-order-now {
+      flex: 1.2;
+      background: linear-gradient(135deg, #4b2e2e 0%, #351c14 100%);
+      color: #fff;
+      text-decoration: none;
+      padding: 11px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 6px 16px rgba(53, 28, 20, 0.2);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-order-now:hover {
+      background: linear-gradient(135deg, #5d3838 0%, #4b2e2e 100%);
+      box-shadow: 0 8px 20px rgba(53, 28, 20, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+      text-align: center;
+      padding: 16px;
+      background-color: var(--cocoa);
+      color: #f7e3d1;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header.site-header {
+        padding: 10px 14px;
+        height: auto;
+      }
+
+      .header-container {
+        justify-content: flex-start;
+      }
+
+      .header-container nav {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .header-container nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: nowrap;
+        padding-right: 15px;
+      }
+
+      .nav-links li a {
+        font-size: 0.85rem;
+        white-space: nowrap;
+      }
+
+      .arrivals-header {
+        padding: 0 18px;
+        margin: 15px auto 10px auto;
+        text-align: center;
+      }
+
+      .arrivals-header h1 {
+        font-size: 2.6rem;
+      }
+
+      .arrivals-header p {
+        font-size: 0.9rem;
+      }
+
+      .offers {
+        grid-template-columns: 1fr !important; 
+        gap: 20px !important;
+        padding: 10px 18px 40px 18px !important;
+        max-width: 480px !important;            
+        margin: 0 auto !important;
+      }
+
+      .offer-card {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .offer-card img {
+        height: 200px;
+      }
+
+      .offer-card h3 {
+        font-family: 'Libre Baskerville', serif !important;
+      }
+
+      .card-actions {
+        gap: 8px;
+      }
+
+      .btn-add-cart,
+      .btn-order-now {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Bakery Elements -->
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+  <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+  <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+  <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+  <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="Offerpage.html" class="active">Arrivals</a></li>
+          <li><a href="customise.html">Customise</a></li>
+          <li><a href="Aboutus.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="cart.html" class="cart-icon-btn" title="View Cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="cart-pill" id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <header class="arrivals-header">
+    <h1>New Arrivals</h1>
+    <p>Handcrafted seasonal specials baked fresh every morning</p>
+  </header>
+
+  <!-- Offers Section -->
+  <section class="offers">
+    <div class="offer-card">
+      <div class="card-ribbon">Limited Batch</div>
+      <div class="img-wrapper">
+        <img src="images/Chocotruffle.jpg" alt="Chocolate Cake" onerror="this.src='images/Creamycakes.jpg'">
+      </div>
+      <h3>Chocolate Truffle Cake</h3>
+      <p>Rich Belgian dark chocolate ganache layered with moist cocoa sponge.</p>
+      <div class="price-wrap">
+        <span class="price">₹499</span>
+      </div>
+      <div class="card-actions">
+        <button class="btn-add-cart" onclick="addToCart('Chocolate Truffle Cake', 499, 'images/Chocotruffle.jpg')">
+          <i class="fa-solid fa-cart-plus"></i> Cart
+        </button>
+        <a href="payment.html" class="btn-order-now" onclick="buyNowDirect('Chocolate Truffle Cake', 499, 'images/Chocotruffle.jpg')">
+          Buy Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-ribbon">Chef's Pick</div>
+      <div class="img-wrapper">
+        <img src="images/Assortedcupcakes.jpg" alt="Cupcakes" onerror="this.src='images/Cupcakes.jpg'">
+      </div>
+      <h3>Assorted Cupcakes</h3>
+      <p>Box of 6 artisanal cupcakes in rich velvet, pistachio, and vanilla buttercream.</p>
+      <div class="price-wrap">
+        <span class="price">₹299</span>
+      </div>
+      <div class="card-actions">
+        <button class="btn-add-cart" onclick="addToCart('Assorted Cupcakes', 299, 'images/Assortedcupcakes.jpg')">
+          <i class="fa-solid fa-cart-plus"></i> Cart
+        </button>
+        <a href="payment.html" class="btn-order-now" onclick="buyNowDirect('Assorted Cupcakes', 299, 'images/Assortedcupcakes.jpg')">
+          Buy Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="offer-card">
+      <div class="card-ribbon">Seasonal</div>
+      <div class="img-wrapper">
+        <img src="images/Strawberrydelight.jpg" alt="Strawberry Cake" onerror="this.src='images/Strawberrydelight.jpg'">
+      </div>
+      <h3>Strawberry Delight</h3>
+      <p>Fluffy vanilla sponge infused with freshly picked strawberry compote and cream.</p>
+      <div class="price-wrap">
+        <span class="price">₹599</span>
+      </div>
+      <div class="card-actions">
+        <button class="btn-add-cart" onclick="addToCart('Strawberry Delight', 599, 'images/Strawberrydelight.jpg')">
+          <i class="fa-solid fa-cart-plus"></i> Cart
+        </button>
+        <a href="payment.html" class="btn-order-now" onclick="buyNowDirect('Strawberry Delight', 599, 'images/Strawberrydelight.jpg')">
+          Buy Now <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Dreamy Dough Bakery | All Rights Reserved
+  </footer>
+
+  <script>
+
+    function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+      const badge = document.getElementById("cart-count");
+      if (badge) {
+        badge.textContent = totalCount;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+    function addToCart(name, price, img) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name.toLowerCase() === name.toLowerCase());
+      
+      if (existing) {
+        existing.quantity = (existing.quantity || 1) + 1;
+        existing.price = (existing.unitPrice || price) * existing.quantity;
+      } else {
+        cart.push({
+          name: name,
+          unitPrice: price,
+          price: price,
+          quantity: 1,
+          img: img
+        });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartBadge();
+      alert(`${name} added to your basket! 🍰`);
+    }
+
+    function buyNowDirect(name, price, img) {
+      let cart = [{
+        name: name,
+        unitPrice: price,
+        price: price,
+        quantity: 1,
+        img: img
+      }];
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  </script>
+</body>
+</html>

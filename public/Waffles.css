@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background: url('images/Wafflepage.jpg') no-repeat center center fixed;
+    background-size: cover; 
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    overflow-x: hidden; 
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #4B2E2E;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(53, 28, 20, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 0 45px;
+    flex-shrink: 0;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    transform: none !important;
+}
+
+.back-pill-btn:hover {
+    background: #d49a4f;
+    color: #351c14;
+    border-color: #d49a4f;
+    transform: none !important;
+}
+
+.cart-icon-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 6px 8px;
+    transition: color 0.3s ease;
+    transform: none !important;
+}
+
+.cart-icon-btn:hover {
+    color: #d49a4f;
+    transform: none !important;
+}
+
+.cart-icon-btn .cart-pill {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    background-color: #fedbb2;
+    color: #351c14;
+    font-size: 0.72rem;
+    font-weight: 700;
+    min-width: 19px;
+    height: 19px;
+    line-height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    border: 1.5px solid #4B2E2E;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FFD7D7;
+}
+
+.menu-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.menu-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 45px;
+    margin-bottom: 20px;
+    margin-left: 55px;
+    color: #4B2E2E;
+    text-align: left;
+}
+
+.cake-box {
+    background: #5b2c2c;
+    color: #fff;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    margin-left: -100px;
+    font-size: 30px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.4);
+}
+
+.cake-box h3 {
+    font-family: 'Damion', cursive;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-decoration: underline dotted;
+}
+
+.cake-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cake-box li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cake-box li:last-child {
+    border-bottom: none;
+}
+
+.cake-box span {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.item-options {
+    display: flex;
+    align-items: center;
+}
+
+.custom-cake-dropdown {
+    position: relative;
+    user-select: none;
+    margin-right: 14px;
+    margin-left: -8px;
+}
+
+.dropdown-trigger {
+    background: #fffdfa;
+    color: #4B2E2E;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1.5px solid #ebdccf;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: all 0.25s ease;
+    min-width: 95px;
+    justify-content: space-between;
+}
+
+.dropdown-trigger:hover,
+.custom-cake-dropdown.open .dropdown-trigger {
+    background: #ffffff;
+    border-color: #4B2E2E;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.dropdown-trigger i {
+    font-size: 11px;
+    color: #4B2E2E;
+    transition: transform 0.25s ease;
+}
+
+.custom-cake-dropdown.open .dropdown-trigger i {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    min-width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1.5px solid #ebdccf;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    list-style: none;
+    padding: 4px 0;
+    margin: 0;
+    z-index: 100;
+    display: none;
+    overflow: hidden;
+}
+
+.custom-cake-dropdown.open .dropdown-options {
+    display: block;
+}
+
+.dropdown-options li {
+    padding: 6px 14px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #351c14 !important;
+    cursor: pointer;
+    border-bottom: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.dropdown-options li:hover {
+    background-color: #4B2E2E !important;
+    color: #ffffff !important;
+}
+
+.price {
+    display: inline-block;
+    width: 70px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.item-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.item-buttons button {
+    background: #fff;
+    color: #5b2c2c;
+    font-weight: bold;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.item-buttons button:hover {
+    background: #ffddc1;
+}
+
+@media screen and (max-width: 992px) {
+    html, body {
+        height: 100vh !important;
+        max-height: 100vh !important;
+        overflow: hidden !important;
+        width: 100% !important;
+    }
+
+    body {
+        background: url('images/Wafflepage.jpg') no-repeat right 20px bottom 110px !important;
+        background-size: 260px auto !important;
+        background-color: #fef5e1 !important;
+    }
+
+    header {
+        height: auto !important;
+        padding: 10px 14px !important;
+    }
+
+    .header-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .nav-links {
+        gap: 12px !important;
+        overflow-x: auto !important;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links li a {
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+    }
+
+    .back-pill-btn {
+        padding: 6px 14px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .menu-section {
+        padding: 0 10px !important;
+        margin: 15px auto 30px auto !important;
+        width: 100% !important;
+    }
+
+    .menu-section h2 {
+        font-size: 32px !important;
+        margin-left: 0 !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+    }
+
+    .cake-box {
+        max-width: 98% !important;
+        width: 98% !important;
+        margin: 0 auto !important;
+        padding: 18px 12px !important;
+        border-radius: 18px !important;
+        background: #5b2c2c !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+    }
+
+    .cake-box li {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        padding: 12px 0 !important;
+        gap: 6px !important;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.25) !important;
+    }
+
+    .cake-box span:first-child {
+        flex: 1 1 auto !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        margin-right: 4px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .item-options {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+    }
+
+    .custom-cake-dropdown { margin: 0 !important; }
+
+    .dropdown-trigger {
+        padding: 5px 8px !important;
+        font-size: 11px !important;
+        border-radius: 6px !important;
+        min-width: 60px !important;
+        gap: 4px !important;
+    }
+
+    .dropdown-trigger i { font-size: 9px !important; }
+
+    .price {
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        width: auto !important;
+        text-align: right !important;
+    }
+
+    .item-buttons {
+        display: flex !important;
+        gap: 5px !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .item-buttons button {
+        padding: 5px 8px !important;
+        font-size: 0.72rem !important;
+        font-weight: 700 !important;
+        border-radius: 15px !important;
+        white-space: nowrap !important;
+    }
+}

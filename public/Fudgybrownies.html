@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fudgy Brownies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Fudgybrownies.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Offerpage.html">Arrivals</a></li>
+                    <li><a href="customise.html">Customise</a></li>
+                    <li><a href="Aboutus.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon-btn" title="View Cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-pill" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h2>Explore Our Brownies</h2>
+
+        <div class="cake-box">
+            <ul>
+                <!-- Classic Brownie -->
+                <li>
+                    <span>Classic Brownie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleBrownieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectBrownieQty(event, this, 350)">1 Kg</li>
+                                <li data-value="2" onclick="selectBrownieQty(event, this, 350)">2 Kg</li>
+                                <li data-value="3" onclick="selectBrownieQty(event, this, 350)">3 Kg</li>
+                                <li data-value="4" onclick="selectBrownieQty(event, this, 350)">4 Kg</li>
+                            </ul>
+                            <input type="hidden" class="brownie-qty-input" value="1" data-base-price="350">
+                        </div>
+                        <span class="price">₹350</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Classic Brownie', 350, 'images/Browniespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Crinkle Top Brownie -->
+                <li>
+                    <span>Crinkle Top Brownie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleBrownieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectBrownieQty(event, this, 400)">1 Kg</li>
+                                <li data-value="2" onclick="selectBrownieQty(event, this, 400)">2 Kg</li>
+                                <li data-value="3" onclick="selectBrownieQty(event, this, 400)">3 Kg</li>
+                                <li data-value="4" onclick="selectBrownieQty(event, this, 400)">4 Kg</li>
+                            </ul>
+                            <input type="hidden" class="brownie-qty-input" value="1" data-base-price="400">
+                        </div>
+                        <span class="price">₹400</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Crinkle Top Brownie', 400, 'images/Browniespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Dark Fudgy Brownie -->
+                <li>
+                    <span>Dark Fudgy Brownie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleBrownieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectBrownieQty(event, this, 450)">1 Kg</li>
+                                <li data-value="2" onclick="selectBrownieQty(event, this, 450)">2 Kg</li>
+                                <li data-value="3" onclick="selectBrownieQty(event, this, 450)">3 Kg</li>
+                                <li data-value="4" onclick="selectBrownieQty(event, this, 450)">4 Kg</li>
+                            </ul>
+                            <input type="hidden" class="brownie-qty-input" value="1" data-base-price="450">
+                        </div>
+                        <span class="price">₹450</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Dark Fudgy Brownie', 450, 'images/Browniespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Chocochip Brownie -->
+                <li>
+                    <span>Chocochip Brownie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleBrownieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectBrownieQty(event, this, 500)">1 Kg</li>
+                                <li data-value="2" onclick="selectBrownieQty(event, this, 500)">2 Kg</li>
+                                <li data-value="3" onclick="selectBrownieQty(event, this, 500)">3 Kg</li>
+                                <li data-value="4" onclick="selectBrownieQty(event, this, 500)">4 Kg</li>
+                            </ul>
+                            <input type="hidden" class="brownie-qty-input" value="1" data-base-price="500">
+                        </div>
+                        <span class="price">₹500</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Chocochip Brownie', 500, 'images/Browniespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Nutella Brownie -->
+                <li>
+                    <span>Nutella Brownie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleBrownieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectBrownieQty(event, this, 550)">1 Kg</li>
+                                <li data-value="2" onclick="selectBrownieQty(event, this, 550)">2 Kg</li>
+                                <li data-value="3" onclick="selectBrownieQty(event, this, 550)">3 Kg</li>
+                                <li data-value="4" onclick="selectBrownieQty(event, this, 550)">4 Kg</li>
+                            </ul>
+                            <input type="hidden" class="brownie-qty-input" value="1" data-base-price="550">
+                        </div>
+                        <span class="price">₹550</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Nutella Brownie', 550, 'images/Browniespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Red Velvet Brownie -->
+                <li>
+                    <span>Red Velvet Brownie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleBrownieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">1 Kg</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectBrownieQty(event, this, 600)">1 Kg</li>
+                                <li data-value="2" onclick="selectBrownieQty(event, this, 600)">2 Kg</li>
+                                <li data-value="3" onclick="selectBrownieQty(event, this, 600)">3 Kg</li>
+                                <li data-value="4" onclick="selectBrownieQty(event, this, 600)">4 Kg</li>
+                            </ul>
+                            <input type="hidden" class="brownie-qty-input" value="1" data-base-price="600">
+                        </div>
+                        <span class="price">₹600</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Red Velvet Brownie', 600, 'images/Browniespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="Fudgybrownies.js"></script>
+    <script>
+        function toggleBrownieDropdown(e, dropdown) {
+            e.stopPropagation();
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+            });
+            dropdown.classList.toggle('open');
+        }
+
+        function selectBrownieQty(e, optionEl, basePrice) {
+            e.stopPropagation();
+            const dropdown = optionEl.closest('.custom-cake-dropdown');
+            const qty = parseInt(optionEl.getAttribute('data-value'), 10);
+            
+            dropdown.querySelector('.selected-val').textContent = optionEl.textContent;
+            dropdown.querySelector('.brownie-qty-input').value = qty;
+            dropdown.classList.remove('open');
+
+            const priceElement = dropdown.closest('li').querySelector('.price');
+            if (priceElement) {
+                priceElement.textContent = '₹' + (basePrice * qty);
+            }
+        }
+        window.addEventListener('click', () => {
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
+        });
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.getElementById("cart-count");
+            if (badge) {
+                badge.textContent = totalCount;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+        function addToCart(name, price, img) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existing = cart.find(item => item.name.toLowerCase() === name.toLowerCase());
+
+            if (existing) {
+                existing.quantity = (existing.quantity || 1) + 1;
+                existing.price = (existing.unitPrice || price) * existing.quantity;
+            } else {
+                cart.push({
+                    name: name,
+                    unitPrice: price,
+                    price: price,
+                    quantity: 1,
+                    img: img
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartBadge();
+            alert(`${name} added to cart! 🍰`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Dreamy Dough</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&family=Dancing+Script:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&family=Dancing+Script:wght@500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- Floating Bakery Doodles -->
+  <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+  <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+  <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+  <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="back-home-pill">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="contact-main">
+    <div class="contact-layout-wrapper">
+      
+      <div class="contact-left-col">
+        <h1 class="contact-heading">Contact Us</h1>
+        <p class="contact-subtext">Have questions or custom bake requests? We’re always here for you!</p>
+
+        <div class="contact-grid">
+          <!-- Phone -->
+          <div class="contact-box">
+            <i class="fa-solid fa-phone"></i>
+            <h3>Phone</h3>
+            <p>+91 98401 23456</p>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="contact-box">
+            <i class="fa-brands fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <p>+91 98401 23456</p>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Email</h3>
+            <p>support@dreamy-dough.com</p>
+          </div>
+
+          <!-- Our Shop -->
+          <div class="contact-box">
+            <i class="fa-solid fa-store"></i>
+            <h3>Our Shop</h3>
+            <p>2443, North Street, Mumbai</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feedback & Query Form -->
+      <div class="contact-right-col">
+        <div class="feedback-card">
+          <h2>Send a Query or Feedback!</h2>
+
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="user-name">Your Name</label>
+              <input type="text" id="user-name" placeholder="e.g. Priya Sharma" required>
+            </div>
+
+            <div class="form-row-dual">
+              <div class="form-group">
+                <label for="user-email">Email Address</label>
+                <input type="email" id="user-email" placeholder="name@example.com" required>
+              </div>
+              <div class="form-group">
+                <label>Topic</label>
+                <div class="custom-dropdown" id="topicDropdown">
+                  <div class="dropdown-selected" onclick="toggleTopicDropdown()">
+                    <span id="selectedTopicText">General Feedback</span>
+                    <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                  </div>
+                  <ul class="dropdown-menu">
+  <li onclick="selectTopic('feedback', 'General Feedback')">General Feedback</li>
+  <li onclick="selectTopic('custom-order', 'Custom Cake Request')">Custom Cake Request</li>
+  <li onclick="selectTopic('delivery', 'Delivery Inquiry')">Delivery Inquiry</li>
+  <li onclick="selectTopic('complaint', 'Order Concern')">Order Concern</li>
+</ul>
+                  <input type="hidden" id="query-type" name="query-type" value="feedback">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="user-message">Your Message</label>
+              <textarea id="user-message" rows="4" placeholder="Tell us how we can make your sweet moments better." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-send-message">
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Dreamy Dough. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+      const badge = document.getElementById("contact-cart-count");
+      if (badge) badge.textContent = count;
+    });
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("user-name").value;
+      alert(`Thank you, ${name}! Your sweet note has been sent to our ovens. 🧁`);
+      document.getElementById("contact-form").reset();
+    }
+
+    function toggleTopicDropdown() {
+      const dropdown = document.getElementById("topicDropdown");
+      dropdown.classList.toggle("open");
+    }
+
+    function selectTopic(value, label) {
+  document.getElementById("selectedTopicText").textContent = label;
+  document.getElementById("query-type").value = value;
+  document.getElementById("topicDropdown").classList.remove("open");
+}
+
+    window.addEventListener("click", function(e) {
+      const dropdown = document.getElementById("topicDropdown");
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  const badge = document.getElementById("cart-count");
+  if (badge) badge.textContent = count;
+});
+  </script>
+</body>
+</html>

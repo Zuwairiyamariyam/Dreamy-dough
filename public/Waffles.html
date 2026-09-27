@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waffles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Waffles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Offerpage.html">Arrivals</a></li>
+                    <li><a href="customise.html">Customise</a></li>
+                    <li><a href="Aboutus.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon-btn" title="View Cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-pill" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h2>Explore Our Waffles</h2>
+
+        <div class="cake-box">
+            <ul class="cake-list">
+                <!-- Double Chocolate -->
+                <li>
+                    <span>Double Chocolate</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleWaffleDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectWaffleQty(event, this, 150)">Single</li>
+                                <li data-value="2" onclick="selectWaffleQty(event, this, 150)">Double</li>
+                                <li data-value="3" onclick="selectWaffleQty(event, this, 150)">Triple</li>
+                            </ul>
+                            <input type="hidden" class="waffle-qty-input" value="1" data-base-price="150">
+                        </div>
+                        <span class="price">₹150</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Double Chocolate Waffle', 150, 'images/Wafflepage.jpg', this)">Add to Cart</button>
+                        <button class="buy-now-btn" onclick="buyNow('Double Chocolate Waffle', 150, 'images/Wafflepage.jpg', this)">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Berries and Cream -->
+                <li>
+                    <span>Berries and Cream</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleWaffleDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectWaffleQty(event, this, 180)">Single</li>
+                                <li data-value="2" onclick="selectWaffleQty(event, this, 180)">Double</li>
+                                <li data-value="3" onclick="selectWaffleQty(event, this, 180)">Triple</li>
+                            </ul>
+                            <input type="hidden" class="waffle-qty-input" value="1" data-base-price="180">
+                        </div>
+                        <span class="price">₹180</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Berries and Cream Waffle', 180, 'images/Wafflepage.jpg', this)">Add to Cart</button>
+                        <button class="buy-now-btn" onclick="buyNow('Berries and Cream Waffle', 180, 'images/Wafflepage.jpg', this)">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Nutella -->
+                <li>
+                    <span>Nutella</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleWaffleDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectWaffleQty(event, this, 200)">Single</li>
+                                <li data-value="2" onclick="selectWaffleQty(event, this, 200)">Double</li>
+                                <li data-value="3" onclick="selectWaffleQty(event, this, 200)">Triple</li>
+                            </ul>
+                            <input type="hidden" class="waffle-qty-input" value="1" data-base-price="200">
+                        </div>
+                        <span class="price">₹200</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Nutella Waffle', 200, 'images/Wafflepage.jpg', this)">Add to Cart</button>
+                        <button class="buy-now-btn" onclick="buyNow('Nutella Waffle', 200, 'images/Wafflepage.jpg', this)">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Butter Milk -->
+                <li>
+                    <span>Butter Milk</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleWaffleDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectWaffleQty(event, this, 140)">Single</li>
+                                <li data-value="2" onclick="selectWaffleQty(event, this, 140)">Double</li>
+                                <li data-value="3" onclick="selectWaffleQty(event, this, 140)">Triple</li>
+                            </ul>
+                            <input type="hidden" class="waffle-qty-input" value="1" data-base-price="140">
+                        </div>
+                        <span class="price">₹140</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Butter Milk Waffle', 140, 'images/Wafflepage.jpg', this)">Add to Cart</button>
+                        <button class="buy-now-btn" onclick="buyNow('Butter Milk Waffle', 140, 'images/Wafflepage.jpg', this)">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Strawberry -->
+                <li>
+                    <span>Strawberry</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleWaffleDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectWaffleQty(event, this, 160)">Single</li>
+                                <li data-value="2" onclick="selectWaffleQty(event, this, 160)">Double</li>
+                                <li data-value="3" onclick="selectWaffleQty(event, this, 160)">Triple</li>
+                            </ul>
+                            <input type="hidden" class="waffle-qty-input" value="1" data-base-price="160">
+                        </div>
+                        <span class="price">₹160</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Strawberry Waffle', 160, 'images/Wafflepage.jpg', this)">Add to Cart</button>
+                        <button class="buy-now-btn" onclick="buyNow('Strawberry Waffle', 160, 'images/Wafflepage.jpg', this)">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Honey Vanilla -->
+                <li>
+                    <span>Honey Vanilla</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleWaffleDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectWaffleQty(event, this, 170)">Single</li>
+                                <li data-value="2" onclick="selectWaffleQty(event, this, 170)">Double</li>
+                                <li data-value="3" onclick="selectWaffleQty(event, this, 170)">Triple</li>
+                            </ul>
+                            <input type="hidden" class="waffle-qty-input" value="1" data-base-price="170">
+                        </div>
+                        <span class="price">₹170</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Honey Vanilla Waffle', 170, 'images/Wafflepage.jpg', this)">Add to Cart</button>
+                        <button class="buy-now-btn" onclick="buyNow('Honey Vanilla Waffle', 170, 'images/Wafflepage.jpg', this)">Buy Now</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="Waffles.js"></script>
+    <script>
+        function toggleWaffleDropdown(e, dropdown) {
+            e.stopPropagation();
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+            });
+            dropdown.classList.toggle('open');
+        }
+
+        function selectWaffleQty(e, optionEl, basePrice) {
+            e.stopPropagation();
+            const dropdown = optionEl.closest('.custom-cake-dropdown');
+            const qty = parseInt(optionEl.getAttribute('data-value'), 10);
+            
+            dropdown.querySelector('.selected-val').textContent = optionEl.textContent;
+            dropdown.querySelector('.waffle-qty-input').value = qty;
+            dropdown.classList.remove('open');
+
+            const priceElement = dropdown.closest('li').querySelector('.price');
+            if (priceElement) {
+                priceElement.textContent = '₹' + (basePrice * qty);
+            }
+        }
+
+        window.addEventListener('click', () => {
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
+        });
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.getElementById("cart-count");
+            if (badge) {
+                badge.textContent = totalCount;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+        function addToCart(name, defaultPrice, img, btn) {
+            const li = btn.closest('li');
+            const input = li.querySelector('.waffle-qty-input');
+            const multiplier = parseInt(input.value, 10) || 1;
+            const finalPrice = defaultPrice * multiplier;
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existing = cart.find(item => item.name.toLowerCase() === name.toLowerCase());
+
+            if (existing) {
+                existing.quantity = (existing.quantity || 1) + multiplier;
+                existing.price = (existing.unitPrice || defaultPrice) * existing.quantity;
+            } else {
+                cart.push({
+                    name: name,
+                    unitPrice: defaultPrice,
+                    price: finalPrice,
+                    quantity: multiplier,
+                    img: img
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartBadge();
+            alert(`${name} (${input.previousElementSibling.querySelector('.selected-val').textContent}) added to cart! 🧇`);
+        }
+
+        function buyNow(name, defaultPrice, img, btn) {
+            const li = btn.closest('li');
+            const input = li.querySelector('.waffle-qty-input');
+            const multiplier = parseInt(input.value, 10) || 1;
+            const finalPrice = defaultPrice * multiplier;
+
+            const item = {
+                name: name,
+                unitPrice: defaultPrice,
+                price: finalPrice,
+                quantity: multiplier,
+                img: img
+            };
+
+            localStorage.setItem("cart", JSON.stringify([item]));
+            window.location.href = "orderplaced.html";
+        }
+    </script>
+</body>
+</html>

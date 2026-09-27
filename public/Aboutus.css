@@ -1,0 +1,747 @@
+/* General Reset */
+
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+
+
+
+/* Background Image with theme fallback */
+
+body {
+
+  background: #fef5e1 url("images/bakerybg.png") no-repeat center center fixed;
+
+  background-size: cover;
+
+  color: #222;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 100vh;
+
+}
+
+
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: -1;
+
+}
+
+
+
+/* =========================================
+
+   STANDARDIZED UNIFIED NAVBAR (MENU PAGE MATCH)
+
+   ========================================= */
+
+header {
+
+  width: 100%;
+
+  height: 70px;
+
+  background-color: #4B2E2E;
+
+  color: white;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  box-shadow: 0 4px 15px rgba(53, 28, 20, 0.2);
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 45px;
+
+  flex-shrink: 0;
+
+}
+
+
+
+.header-container {
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+}
+
+
+
+.header-container nav {
+
+  margin-left: auto;
+
+}
+
+
+
+/* Standard Back Pill Button */
+
+.back-pill-btn {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  padding: 8px 20px;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  transition: all 0.3s ease;
+
+}
+
+
+
+.back-pill-btn:hover {
+
+  background: #d49a4f;
+
+  color: #351c14;
+
+  transform: none;
+
+}
+
+
+
+/* Nav Links Right Side */
+
+.nav-links {
+
+  list-style: none;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+
+
+.nav-links li a {
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  font-size: 1.05rem;
+
+  letter-spacing: 0.5px;
+
+  transition: color 0.3s ease;
+
+}
+
+
+
+.nav-links li a:hover,
+
+.nav-links li a.active {
+
+  color: #FFD7D7;
+
+}
+
+
+
+/* Cart Badge Link */
+
+.cart-pill-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+
+
+.cart-pill {
+
+  background: #fedbb2;
+
+  color: #351c14;
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  padding: 2px 8px;
+
+  border-radius: 12px;
+
+}
+
+
+
+/* Shopping Cart Trolley Button */
+
+.cart-icon-btn:hover {
+
+  color: var(--gold-warm);
+
+  transform: none !important; /* <--- Zoom effect complete-aa stop aayidum */
+
+}
+
+
+
+.cart-icon-btn {
+
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 1.3rem;
+
+  padding: 6px 8px;
+
+  transition: color 0.3s ease; /* transform transition-ah eduthudunga */
+
+  transform: none !important;
+
+}
+
+
+
+/* Oruvela SVG use panna */
+
+.cart-svg-icon {
+
+  width: 24px;
+
+  height: 24px;
+
+  stroke: #ffffff;
+
+}
+
+
+
+.cart-icon-btn:hover .cart-svg-icon {
+
+  stroke: var(--gold-warm);
+
+}
+
+
+
+/* Floating Count Badge */
+
+.cart-icon-btn .cart-pill {
+
+  position: absolute;
+
+  top: -4px;
+
+  right: -8px;
+
+  background-color: #fedbb2;   /* Cream warm badge */
+
+  color: #351c14;              /* Dark chocolate text */
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  min-width: 19px;
+
+  height: 19px;
+
+  line-height: 18px;
+
+  border-radius: 50%;
+
+  text-align: center;
+
+  padding: 0 4px;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+
+  pointer-events: none;
+
+  border: 1.5px solid var(--cocoa);
+
+}
+
+
+
+/* --- ABOUT SECTION --- */
+
+.about, .feedback {
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+
+
+.about {
+
+  padding: 70px 60px 40px 60px;
+
+}
+
+
+
+.about-container {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  gap: 60px;
+
+  position: relative;
+
+}
+
+
+
+/* IMAGE COLUMN */
+
+.about-image-box {
+
+  flex: 0 0 auto;
+
+  transform: translateX(-45px);
+
+}
+
+
+
+.about-image-box img {
+
+  width: 500px;
+
+  height: 450px;
+
+  border-radius: 80px;
+
+  display: block;
+
+  margin-left: -60px;
+
+  margin-top: 12.5px;
+
+  box-shadow: 0 10px 25px rgba(75, 46, 46, 0.15);
+
+}
+
+
+
+/* CONTENT BOX */
+
+.about-content-box {
+
+  max-width: 600px;
+
+  transform: translateX(100px);
+
+  text-align: left;
+
+  margin-top: -20px;
+
+}
+
+
+
+/* Title controls itself */
+
+.about-title {
+
+  font-size: 3rem;
+
+  font-weight: bold;
+
+  color: #4B2E2E;
+
+  font-family: 'Dancing Script', cursive;
+
+  margin-top: -35px;
+
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  margin-right: 0;
+
+  margin-left: -105px;
+
+}
+
+
+
+/* Text */
+
+.about-text {
+
+  margin-top: -7px;
+
+}
+
+
+
+.about-text p {
+
+  font-size: 1.16rem;
+
+  line-height: 1.8;
+
+  color: #333;
+
+  margin-bottom: 15px;
+
+  text-align: justify;
+
+  margin-right: 0;
+
+  margin-left: -100px;
+
+}
+
+
+
+/* Feedback Section */
+
+.feedback {
+
+  text-align: center;
+
+  padding-top: 0;
+
+  padding-bottom: 55px;
+
+}
+
+
+
+.feedback h2 {
+
+  font-size: 3rem;
+
+  margin-bottom: 30px;
+
+  color: #4B2E2E;
+
+  font-weight: bold;
+
+  font-family: 'Dancing Script', cursive;
+
+  margin-top: -15px;
+
+}
+
+
+
+.feedback-container {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  flex-wrap: wrap;
+
+}
+
+
+
+.feedback-box {
+
+  background: #fff;
+
+  padding: 35px 30px;
+
+  border-radius: 15px;
+
+  box-shadow: 0px 6px 18px rgba(75, 46, 46, 0.08);
+
+  border: 1px solid #ebdccf;
+
+  max-width: 300px;
+
+  text-align: center;
+
+}
+
+
+
+.feedback-box:hover {
+
+  box-shadow: 0px 10px 25px rgba(75, 46, 46, 0.14);
+
+}
+
+
+
+.feedback-box i {
+
+  font-size: 3rem;
+
+  color: #4B2E2E;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.feedback-box h3 {
+
+  font-size: 1.1rem;
+
+  margin-bottom: 10px;
+
+  color: #222;
+
+  font-weight: 700;
+
+}
+
+
+
+.feedback-box p {
+
+  font-size: 0.95rem;
+
+  color: #444;
+
+  line-height: 1.5;
+
+}
+
+
+
+/* Footer */
+
+footer {
+
+  text-align: center;
+
+  padding: 16px;
+
+  background-color: #4B2E2E;
+
+  color: #f7e3d1;
+
+  margin-top: auto;
+
+  font-size: 0.95rem;
+
+}
+
+
+
+/* Floating Bakery Doodles */
+
+.floating-doodle {
+
+  position: fixed;
+
+  color: rgba(75, 46, 46, 0.08);
+
+  font-size: 4.5rem;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+}
+
+
+
+.doodle-1 { top: 16%; left: 4%; transform: rotate(-15deg); }
+
+.doodle-2 { top: 72%; left: 5%; transform: rotate(18deg); }
+
+.doodle-3 { top: 20%; right: 4%; transform: rotate(12deg); }
+
+.doodle-4 { top: 75%; right: 6%; transform: rotate(-25deg); }
+
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+
+  .about-container {
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 30px;
+
+  }
+
+  .about-image-box, .about-content-box {
+
+    transform: none;
+
+    margin: 0;
+
+  }
+
+  .about-image-box img {
+
+  margin: 0;
+
+  max-width: 100%;
+
+  height: auto;
+
+  transform: translateY(-30px);
+
+}
+
+
+  .about-title, .about-text p {
+
+  margin-left: 0;
+
+}
+
+.about-text p {
+
+  text-align: justify;
+
+}
+
+
+
+  .about-title {
+
+    text-align: center;
+
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+ header {
+    padding: 10px 14px !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .header-container {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+
+
+  .header-container nav {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .header-container nav::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .nav-links {
+    display: flex !important;
+    gap: 14px !important;
+    flex-wrap: nowrap !important; 
+    align-items: center !important;
+    padding-right: 18px !important;
+    margin: 0 !important;
+  }
+
+  .nav-links li a {
+    font-size: 0.85rem !important;
+    white-space: nowrap !important; 
+  }
+
+}

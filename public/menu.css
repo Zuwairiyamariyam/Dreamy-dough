@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important; 
+}
+
+body {
+    background: #fef5e1 url('images/bakerybg.png') no-repeat center center fixed;
+    background-size: cover; 
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #4B2E2E;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(53, 28, 20, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 0 45px;
+    flex-shrink: 0;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cart-icon-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 6px 8px;
+    transition: color 0.3s ease;
+    transform: none !important;
+}
+
+.cart-icon-btn:hover {
+    color: #d49a4f;
+    transform: none !important;
+}
+
+.cart-icon-btn .cart-pill {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    background-color: #fedbb2;
+    color: #351c14;
+    font-size: 0.72rem;
+    font-weight: 700;
+    min-width: 19px;
+    height: 19px;
+    line-height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    border: 1.5px solid #4B2E2E;
+}
+
+.header-container nav {
+    margin-left: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FFD7D7;
+}
+
+.menu-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+    text-align: center;
+    max-width: 1350px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.menu-items-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.menu-items-row:last-child {
+    margin-bottom: 0;
+}
+
+.menu-item {
+    background-color: #4B2E2E;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    flex: 0 0 240px;
+    max-width: 250px;
+    transition: box-shadow 0.3s ease;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.menu-item h3 {
+    margin: 12px 0 10px 0;
+    color: #ffffff;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+.menu-item:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.menu-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Floating Bakery Doodles */
+.floating-doodle {
+    position: fixed;
+    color: rgba(75, 46, 46, 0.08);
+    font-size: 4.5rem;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.doodle-1 { top: 16%; left: 4%; transform: rotate(-15deg); }
+.doodle-2 { top: 72%; left: 5%; transform: rotate(18deg); }
+.doodle-3 { top: 20%; right: 4%; transform: rotate(12deg); }
+.doodle-4 { top: 75%; right: 6%; transform: rotate(-25deg); }
+
+@media screen and (max-width: 768px) {
+    html, body {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    body {
+        background-attachment: scroll !important;
+    }
+
+    header {
+        height: auto !important;
+        padding: 10px 14px !important;
+    }
+
+    .header-container {
+        justify-content: flex-start !important;
+    }
+
+    .header-container nav {
+        width: 100% !important;
+        overflow-x: auto !important; 
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; 
+    }
+
+    .header-container nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links {
+        gap: 14px !important;
+        flex-wrap: nowrap !important; 
+        padding-right: 15px !important;
+    }
+
+    .nav-links li a {
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+    }
+
+    .cart-icon-btn {
+        font-size: 1.15rem !important;
+    }
+
+    .menu-section {
+        padding: 16px 12px 50px 12px !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .menu-items-row {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 12px !important;
+        margin-bottom: 12px !important;
+        width: 100% !important;
+    }
+
+    .menu-item {
+        flex: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        border-radius: 12px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .menu-item img {
+        height: 125px !important; 
+    }
+
+    .menu-item h3 {
+        font-size: 0.9rem !important;
+        margin: 8px 4px !important;
+        font-weight: 600 !important;
+    }
+
+    .floating-doodle {
+        font-size: 2.8rem !important;
+        opacity: 0.3 !important;
+    }
+}

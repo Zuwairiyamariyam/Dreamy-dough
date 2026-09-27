@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Dreamy Dough</title>
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+  <!-- Floating Bakery Elements -->
+  <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+  <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+  <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+  <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+
+  <header class="payment-header">
+    <div class="header-container">
+      <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+    </div>
+  </header>
+
+  <main class="payment-main-wrapper">
+    <div class="checkout-title-area">
+      <h1>Dispatch & Delivery</h1>
+      <p>Tell us where to drop your fresh oven bakes</p>
+    </div>
+
+    <form id="payment-form" class="checkout-grid-flow">
+      <section class="delivery-details-col">
+        <div class="section-label">
+          <span class="step-num">1</span>
+          <h2>Customer & Address</h2>
+        </div>
+
+        <div class="input-duo">
+          <div class="field-wrap">
+            <label for="name">Your Name</label>
+            <div class="input-inner">
+              <i class="fa-regular fa-user"></i>
+              <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label for="phone">Contact Phone</label>
+            <div class="input-inner">
+              <i class="fa-solid fa-phone"></i>
+              <input type="tel" id="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-wrap">
+          <label for="location">Delivery Destination</label>
+          <div class="input-inner textarea-wrap">
+            <i class="fa-solid fa-location-dot"></i>
+            <textarea id="location" placeholder="Flat / House No, Street name, Area landmark..." required></textarea>
+          </div>
+        </div>
+
+        <div class="field-wrap">
+          <label>Delivery Instructions (Optional)</label>
+          <div class="input-inner">
+            <i class="fa-regular fa-clipboard"></i>
+            <input type="text" id="notes" placeholder="e.g. Ring bell, Leave with security">
+          </div>
+        </div>
+      </section>
+
+      <aside class="payment-summary-col">
+        <div class="section-label">
+          <span class="step-num">2</span>
+          <h2>Payment Method</h2>
+        </div>
+
+        <div class="cod-banner">
+          <div class="cod-icon-wrap">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <div class="cod-info">
+            <h3>Pay on Delivery</h3>
+            <p>Pay comfortably via Cash or UPI at your doorstep.</p>
+          </div>
+          <div class="cod-check">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+        </div>
+        <div class="bill-overview">
+          <div class="bill-row">
+            <span>Bill Amount</span>
+            <strong id="payable-total">₹0</strong>
+          </div>
+          <div class="bill-row muted">
+            <span>Packaging & Fresh Delivery</span>
+            <span class="free-pill">FREE</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="confirm" class="btn-place-order">
+          <span>Place Bakery Order</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <div class="order-guarantee">
+          <i class="fa-solid fa-leaf"></i>
+          <span>100% Eggless • Baked immediately upon order confirmation</span>
+        </div>
+      </aside>
+    </form>
+  </main>
+
+  <script src="payment.js"></script>
+</body>
+</html>

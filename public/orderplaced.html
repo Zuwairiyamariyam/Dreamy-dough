@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed | Dreamy Dough</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="orderplaced.css">
+</head>
+<body>
+
+  <!-- Floating Bakery Elements -->
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-bottom-right"></div>
+  <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+  <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+  <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+  <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+
+  <main class="success-container">
+    <div class="success-card">
+
+      <div class="success-icon-wrap">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <div class="order-badge">Order Confirmed</div>
+      <h1 id="user-greeting">Thank You!</h1>
+      <p class="subtitle" id="arrival-msg">Your sweet cravings are on the way.</p>
+
+      <div class="order-receipt-box">
+        <div class="receipt-row">
+          <span class="label">Order Token</span>
+          <strong id="order-token" class="value highlight">#DD-7281</strong>
+        </div>
+        <div class="receipt-divider"></div>
+        <div class="receipt-row">
+          <span class="label">Payment Type</span>
+          <strong class="value"><i class="fa-solid fa-hand-holding-dollar"></i> Cash On Delivery</strong>
+        </div>
+        <div class="receipt-row">
+          <span class="label">Kitchen Status</span>
+          <span class="status-pill"><i class="fa-solid fa-fire"></i> Fresh Baking</span>
+        </div>
+      </div>
+
+      <div class="delivery-info-pill">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="destination-text">
+          <span>Delivering Fresh To</span>
+          <strong id="dest-location">Loading address...</strong>
+        </div>
+      </div>
+
+      <div class="success-actions">
+        <button id="home-btn" class="btn-home">
+          <i class="fa-solid fa-house"></i> Go to Home
+        </button>
+        <button onclick="window.location.href='menu.html'" class="btn-menu">
+          Explore More Bakes
+        </button>
+      </div>
+
+      <div class="fresh-tag">
+        <i class="fa-solid fa-leaf"></i> 100% Eggless • Freshly Handcrafted
+      </div>
+    </div>
+  </main>
+
+  <script src="orderplaced.js"></script>
+</body>
+</html>

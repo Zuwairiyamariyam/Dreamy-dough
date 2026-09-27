@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creamy Cookies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Cookies.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Offerpage.html">Arrivals</a></li>
+                    <li><a href="customise.html">Customise</a></li>
+                    <li><a href="Aboutus.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon-btn" title="View Cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-pill" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="menu-section">
+        <h2>Explore Our Cookies</h2>
+
+        <div class="cake-box">
+            <ul>
+                <!-- Pistachio Cookie -->
+                <li>
+                    <span>Pistachio Cookie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCookieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">10 pcs</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-qty="10" onclick='selectCookieQty(event, this, {"10":150, "20":280, "30":400, "40":520, "50":650})'>10 pcs</li>
+                                <li data-qty="20" onclick='selectCookieQty(event, this, {"10":150, "20":280, "30":400, "40":520, "50":650})'>20 pcs</li>
+                                <li data-qty="30" onclick='selectCookieQty(event, this, {"10":150, "20":280, "30":400, "40":520, "50":650})'>30 pcs</li>
+                                <li data-qty="40" onclick='selectCookieQty(event, this, {"10":150, "20":280, "30":400, "40":520, "50":650})'>40 pcs</li>
+                                <li data-qty="50" onclick='selectCookieQty(event, this, {"10":150, "20":280, "30":400, "40":520, "50":650})'>50 pcs</li>
+                            </ul>
+                            <input type="hidden" class="cookie-qty-input" value="10">
+                        </div>
+                        <span class="price">₹150</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Pistachio Cookie', 150, 'images/Cookiespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- American Classic -->
+                <li>
+                    <span>American Classic</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCookieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">10 pcs</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-qty="10" onclick='selectCookieQty(event, this, {"10":200, "20":380, "30":550, "40":700, "50":850})'>10 pcs</li>
+                                <li data-qty="20" onclick='selectCookieQty(event, this, {"10":200, "20":380, "30":550, "40":700, "50":850})'>20 pcs</li>
+                                <li data-qty="30" onclick='selectCookieQty(event, this, {"10":200, "20":380, "30":550, "40":700, "50":850})'>30 pcs</li>
+                                <li data-qty="40" onclick='selectCookieQty(event, this, {"10":200, "20":380, "30":550, "40":700, "50":850})'>40 pcs</li>
+                                <li data-qty="50" onclick='selectCookieQty(event, this, {"10":200, "20":380, "30":550, "40":700, "50":850})'>50 pcs</li>
+                            </ul>
+                            <input type="hidden" class="cookie-qty-input" value="10">
+                        </div>
+                        <span class="price">₹200</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('American Classic', 200, 'images/Cookiespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Peanut & Caramel -->
+                <li>
+                    <span>Peanut & Caramel</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCookieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">10 pcs</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-qty="10" onclick='selectCookieQty(event, this, {"10":220, "20":420, "30":600, "40":780, "50":950})'>10 pcs</li>
+                                <li data-qty="20" onclick='selectCookieQty(event, this, {"10":220, "20":420, "30":600, "40":780, "50":950})'>20 pcs</li>
+                                <li data-qty="30" onclick='selectCookieQty(event, this, {"10":220, "20":420, "30":600, "40":780, "50":950})'>30 pcs</li>
+                                <li data-qty="40" onclick='selectCookieQty(event, this, {"10":220, "20":420, "30":600, "40":780, "50":950})'>40 pcs</li>
+                                <li data-qty="50" onclick='selectCookieQty(event, this, {"10":220, "20":420, "30":600, "40":780, "50":950})'>50 pcs</li>
+                            </ul>
+                            <input type="hidden" class="cookie-qty-input" value="10">
+                        </div>
+                        <span class="price">₹220</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Peanut & Caramel', 220, 'images/Cookiespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Blackberries Cookie -->
+                <li>
+                    <span>Blackberries Cookie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCookieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">10 pcs</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-qty="10" onclick='selectCookieQty(event, this, {"10":280, "20":550, "30":800, "40":1040, "50":1300})'>10 pcs</li>
+                                <li data-qty="20" onclick='selectCookieQty(event, this, {"10":280, "20":550, "30":800, "40":1040, "50":1300})'>20 pcs</li>
+                                <li data-qty="30" onclick='selectCookieQty(event, this, {"10":280, "20":550, "30":800, "40":1040, "50":1300})'>30 pcs</li>
+                                <li data-qty="40" onclick='selectCookieQty(event, this, {"10":280, "20":550, "30":800, "40":1040, "50":1300})'>40 pcs</li>
+                                <li data-qty="50" onclick='selectCookieQty(event, this, {"10":280, "20":550, "30":800, "40":1040, "50":1300})'>50 pcs</li>
+                            </ul>
+                            <input type="hidden" class="cookie-qty-input" value="10">
+                        </div>
+                        <span class="price">₹280</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Blackberries Cookie', 280, 'images/Cookiespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Cookies Cream -->
+                <li>
+                    <span>Cookies Cream</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCookieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">10 pcs</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-qty="10" onclick='selectCookieQty(event, this, {"10":300, "20":580, "30":850, "40":1100, "50":1350})'>10 pcs</li>
+                                <li data-qty="20" onclick='selectCookieQty(event, this, {"10":300, "20":580, "30":850, "40":1100, "50":1350})'>20 pcs</li>
+                                <li data-qty="30" onclick='selectCookieQty(event, this, {"10":300, "20":580, "30":850, "40":1100, "50":1350})'>30 pcs</li>
+                                <li data-qty="40" onclick='selectCookieQty(event, this, {"10":300, "20":580, "30":850, "40":1100, "50":1350})'>40 pcs</li>
+                                <li data-qty="50" onclick='selectCookieQty(event, this, {"10":300, "20":580, "30":850, "40":1100, "50":1350})'>50 pcs</li>
+                            </ul>
+                            <input type="hidden" class="cookie-qty-input" value="10">
+                        </div>
+                        <span class="price">₹300</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Cookies Cream', 300, 'images/Cookiespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Kitkat Cookie -->
+                <li>
+                    <span>Kitkat Cookie</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleCookieDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">10 pcs</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-qty="10" onclick='selectCookieQty(event, this, {"10":350, "20":680, "30":1000, "40":1320, "50":1650})'>10 pcs</li>
+                                <li data-qty="20" onclick='selectCookieQty(event, this, {"10":350, "20":680, "30":1000, "40":1320, "50":1650})'>20 pcs</li>
+                                <li data-qty="30" onclick='selectCookieQty(event, this, {"10":350, "20":680, "30":1000, "40":1320, "50":1650})'>30 pcs</li>
+                                <li data-qty="40" onclick='selectCookieQty(event, this, {"10":350, "20":680, "30":1000, "40":1320, "50":1650})'>40 pcs</li>
+                                <li data-qty="50" onclick='selectCookieQty(event, this, {"10":350, "20":680, "30":1000, "40":1320, "50":1650})'>50 pcs</li>
+                            </ul>
+                            <input type="hidden" class="cookie-qty-input" value="10">
+                        </div>
+                        <span class="price">₹350</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn" onclick="addToCart('Kitkat Cookie', 350, 'images/Cookiespage.jpg')">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="Cookies.js"></script>
+    <script>
+        function toggleCookieDropdown(e, dropdown) {
+            e.stopPropagation();
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
+                if (d !== dropdown) d.classList.remove('open');
+            });
+            dropdown.classList.toggle('open');
+        }
+
+        function selectCookieQty(e, optionEl, priceObj) {
+            e.stopPropagation();
+            const dropdown = optionEl.closest('.custom-cake-dropdown');
+            const qty = optionEl.getAttribute('data-qty');
+            
+            dropdown.querySelector('.selected-val').textContent = optionEl.textContent;
+            dropdown.querySelector('.cookie-qty-input').value = qty;
+            dropdown.classList.remove('open');
+
+            const priceElement = dropdown.closest('li').querySelector('.price');
+            if (priceElement && priceObj[qty]) {
+                priceElement.textContent = '₹' + priceObj[qty];
+            }
+        }
+
+        window.addEventListener('click', () => {
+            document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
+        });
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+            const badge = document.getElementById("cart-count");
+            if (badge) {
+                badge.textContent = totalCount;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+        function addToCart(name, price, img) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const existing = cart.find(item => item.name.toLowerCase() === name.toLowerCase());
+
+            if (existing) {
+                existing.quantity = (existing.quantity || 1) + 1;
+                existing.price = (existing.unitPrice || price) * existing.quantity;
+            } else {
+                cart.push({
+                    name: name,
+                    unitPrice: price,
+                    price: price,
+                    quantity: 1,
+                    img: img
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartBadge();
+            alert(`${name} added to cart! 🍪`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swissrolls</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Swissrolls.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="Offerpage.html">Arrivals</a></li>
+                    <li><a href="customise.html">Customise</a></li>
+                    <li><a href="Aboutus.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="cart.html" class="cart-icon-btn" title="View Cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-pill" id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <h2>Explore Our Swissrolls</h2>
+
+        <div class="cake-box">
+            <ul class="cake-list">
+                <!-- Chocolate Mango -->
+                <li>
+                    <span>Chocolate Mango</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleSwissDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectSwissQty(event, this, 200)">Single</li>
+                                <li data-value="2" onclick="selectSwissQty(event, this, 200)">2 Rolls</li>
+                                <li data-value="3" onclick="selectSwissQty(event, this, 200)">3 Rolls</li>
+                                <li data-value="4" onclick="selectSwissQty(event, this, 200)">4 Rolls</li>
+                            </ul>
+                            <input type="hidden" class="swiss-qty-input" value="1" data-base-price="200">
+                        </div>
+                        <span class="price">₹200</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Vanilla and Strawberry -->
+                <li>
+                    <span>Vanilla and Strawberry</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleSwissDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectSwissQty(event, this, 250)">Single</li>
+                                <li data-value="2" onclick="selectSwissQty(event, this, 250)">2 Rolls</li>
+                                <li data-value="3" onclick="selectSwissQty(event, this, 250)">3 Rolls</li>
+                                <li data-value="4" onclick="selectSwissQty(event, this, 250)">4 Rolls</li>
+                            </ul>
+                            <input type="hidden" class="swiss-qty-input" value="1" data-base-price="250">
+                        </div>
+                        <span class="price">₹250</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Black Forest Magic -->
+                <li>
+                    <span>Black Forest Magic</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleSwissDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectSwissQty(event, this, 300)">Single</li>
+                                <li data-value="2" onclick="selectSwissQty(event, this, 300)">2 Rolls</li>
+                                <li data-value="3" onclick="selectSwissQty(event, this, 300)">3 Rolls</li>
+                                <li data-value="4" onclick="selectSwissQty(event, this, 300)">4 Rolls</li>
+                            </ul>
+                            <input type="hidden" class="swiss-qty-input" value="1" data-base-price="300">
+                        </div>
+                        <span class="price">₹300</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Chocolate Cheese -->
+                <li>
+                    <span>Chocolate Cheese</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleSwissDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectSwissQty(event, this, 280)">Single</li>
+                                <li data-value="2" onclick="selectSwissQty(event, this, 280)">2 Rolls</li>
+                                <li data-value="3" onclick="selectSwissQty(event, this, 280)">3 Rolls</li>
+                                <li data-value="4" onclick="selectSwissQty(event, this, 280)">4 Rolls</li>
+                            </ul>
+                            <input type="hidden" class="swiss-qty-input" value="1" data-base-price="280">
+                        </div>
+                        <span class="price">₹280</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Carrot Cream Cheese -->
+                <li>
+                    <span>Carrot Cream Cheese</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleSwissDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectSwissQty(event, this, 260)">Single</li>
+                                <li data-value="2" onclick="selectSwissQty(event, this, 260)">2 Rolls</li>
+                                <li data-value="3" onclick="selectSwissQty(event, this, 260)">3 Rolls</li>
+                                <li data-value="4" onclick="selectSwissQty(event, this, 260)">4 Rolls</li>
+                            </ul>
+                            <input type="hidden" class="swiss-qty-input" value="1" data-base-price="260">
+                        </div>
+                        <span class="price">₹260</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+
+                <!-- Strawberry Cheese -->
+                <li>
+                    <span>Strawberry Cheese</span>
+                    <div class="item-options">
+                        <div class="custom-cake-dropdown" onclick="toggleSwissDropdown(event, this)">
+                            <div class="dropdown-trigger">
+                                <span class="selected-val">Single</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-options">
+                                <li data-value="1" onclick="selectSwissQty(event, this, 270)">Single</li>
+                                <li data-value="2" onclick="selectSwissQty(event, this, 270)">2 Rolls</li>
+                                <li data-value="3" onclick="selectSwissQty(event, this, 270)">3 Rolls</li>
+                                <li data-value="4" onclick="selectSwissQty(event, this, 270)">4 Rolls</li>
+                            </ul>
+                            <input type="hidden" class="swiss-qty-input" value="1" data-base-price="270">
+                        </div>
+                        <span class="price">₹270</span>
+                    </div>
+                    <div class="item-buttons">
+                        <button class="add-cart-btn">Add to Cart</button>
+                        <button class="buy-now-btn">Buy Now</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="Swissrolls.js"></script>
+    <script>
+    function toggleSwissDropdown(e, dropdown) {
+        e.stopPropagation();
+        document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+        });
+        dropdown.classList.toggle('open');
+    }
+
+    function selectSwissQty(e, optionEl, basePrice) {
+        e.stopPropagation();
+        const dropdown = optionEl.closest('.custom-cake-dropdown');
+        const qty = parseInt(optionEl.getAttribute('data-value'), 10);
+        
+        dropdown.querySelector('.selected-val').textContent = optionEl.textContent;
+        dropdown.querySelector('.swiss-qty-input').value = qty;
+        dropdown.classList.remove('open');
+
+        const priceElement = dropdown.closest('li').querySelector('.price');
+        if (priceElement) {
+            priceElement.textContent = '₹' + (basePrice * qty);
+        }
+    }
+
+    window.addEventListener('click', () => {
+        document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
+    });
+
+    function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        const badge = document.getElementById("cart-count");
+        if (badge) {
+            badge.textContent = totalCount;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", updateCartBadge);
+
+    function addToCartHandler(btn) {
+        const itemEl = btn.closest("li");
+        const name = itemEl.querySelector("span").textContent.trim();
+        const inputEl = itemEl.querySelector(".swiss-qty-input");
+        const qty = parseInt(inputEl.value, 10);
+        const basePrice = parseInt(inputEl.getAttribute("data-base-price"), 10);
+        const totalPrice = basePrice * qty;
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const itemName = `${name} Swissroll`;
+        const existing = cart.find(item => item.name.toLowerCase() === itemName.toLowerCase());
+
+        if (existing) {
+            existing.quantity = (existing.quantity || 1) + qty;
+            existing.price = (existing.price || 0) + totalPrice;
+        } else {
+            cart.push({
+                name: itemName,
+                unitPrice: basePrice,
+                price: totalPrice,
+                quantity: qty,
+                img: 'images/Swissrollspage.jpg'
+            });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartBadge();
+        alert(`${itemName} (${qty === 1 ? 'Single' : qty + ' Rolls'}) added to cart! 🍰`);
+    }
+
+    function buyNowHandler(btn) {
+        const itemEl = btn.closest("li");
+        const name = itemEl.querySelector("span").textContent.trim();
+        const inputEl = itemEl.querySelector(".swiss-qty-input");
+        const qty = parseInt(inputEl.value, 10);
+        const basePrice = parseInt(inputEl.getAttribute("data-base-price"), 10);
+        const totalPrice = basePrice * qty;
+
+        const item = {
+            name: `${name} Swissroll`,
+            unitPrice: basePrice,
+            price: totalPrice,
+            quantity: qty,
+            img: 'images/Swissrollspage.jpg'
+        };
+
+        localStorage.setItem("cart", JSON.stringify([item]));
+        window.location.href = "orderplaced.html";
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".cake-box li").forEach(item => {
+            const addBtn = item.querySelector(".add-cart-btn");
+            const buyBtn = item.querySelector(".buy-now-btn");
+            if (addBtn) addBtn.addEventListener("click", () => addToCartHandler(addBtn));
+            if (buyBtn) buyBtn.addEventListener("click", () => buyNowHandler(buyBtn));
+        });
+    });
+    </script>
+</body>
+</html>

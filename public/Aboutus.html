@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | Dreamy Dough</title>
+
+ 
+
+  <!-- Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Damion&family=Josefin+Sans:wght@400;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+ 
+
+  <!-- Font Awesome for icons -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="Aboutus.css">
+
+</head>
+
+<body>
+
+
+
+  <!-- Floating Bakery Doodles (4 Corner Watermark Elements) -->
+
+  <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+
+  <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+
+  <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+
+  <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+
+
+
+  <!-- Standardized Unified Header -->
+
+  <header>
+
+    <div class="header-container">
+
+
+
+      <!-- Right Side Unified Navigation Links -->
+
+      <nav>
+
+  <ul class="nav-links">
+
+    <li><a href="index.html">Home</a></li>
+
+    <li><a href="menu.html">Menu</a></li>
+
+    <li><a href="Offerpage.html">Arrivals</a></li>
+
+    <li><a href="customise.html">Customise</a></li>
+
+    <li><a href="Aboutus.html" class="active">About us</a></li>
+
+    <li><a href="contact.html">Contact</a></li>
+
+    <li>
+
+  <a href="cart.html" class="cart-icon-btn" title="View Cart">
+
+    <!-- Classic Shopping Cart Trolley Icon -->
+
+    <i class="fa-solid fa-cart-shopping"></i>
+
+    <span class="cart-pill" id="cart-count">0</span>
+
+  </a>
+
+</li>
+
+  </ul>
+
+</nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- About Us Section -->
+
+  <section class="about">
+
+    <div class="about-container">
+
+     
+
+      <!-- Left Side Image -->
+
+      <div class="about-image-box">
+
+        <img src="images/about.jpg" alt="About Dreamy Dough">
+
+      </div>
+
+
+
+      <!-- Right Side Content -->
+
+      <div class="about-content-box">
+
+        <h2 class="about-title">About Us</h2>
+
+        <div class="about-text">
+
+          <p>
+
+            Welcome to <b>Dreamy Dough</b>, where every bite tells a story!
+
+            We started our journey with a simple passion – to create cakes and desserts that bring
+
+            joy to every occasion. From birthdays and weddings to cozy evening tea's, our bakes
+
+            are made to celebrate life’s sweetest moments.
+
+          </p>
+
+          <p>
+
+            At Dreamy dough, we use only the finest ingredients, blending traditional recipes
+
+            with a touch of modern creativity. Our chefs craft each cake with love, ensuring
+
+            not just great taste but also an unforgettable experience.
+
+          </p>
+
+          <p>
+
+            We believe in spreading happiness through our creations. That’s why we focus
+
+            on <b>quality, freshness, and design</b>. Whether it’s a custom cake for your
+
+            special day or a simple cupcake for a quick treat, we’ve got you covered.
+
+          </p>
+
+          <p>
+
+            Thank you for choosing us to be a part of your celebrations. Your smiles
+
+            inspire us to bake even better every single day!
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- Customer Feedback Section -->
+
+  <section class="feedback">
+
+    <h2>Customer Feedback</h2>
+
+    <div class="feedback-container">
+
+
+
+      <div class="feedback-box">
+
+        <i class="fa-solid fa-user-circle"></i>
+
+        <h3>Steeve M</h3>
+
+        <p>"Amazing service! The team is very professional and always delivers on time. Highly recommend."</p>
+
+      </div>
+
+
+
+      <div class="feedback-box">
+
+        <i class="fa-solid fa-user-circle"></i>
+
+        <h3>Nancy K</h3>
+
+        <p>"Excellent quality and friendly staff. They truly care about customer satisfaction."</p>
+
+      </div>
+
+
+
+      <div class="feedback-box">
+
+        <i class="fa-solid fa-user-circle"></i>
+
+        <h3>Dustin R</h3>
+
+        <p>"I’ve been a loyal customer for years, and they never disappoint. Love their service!"</p>
+
+      </div>
+
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>&copy; 2026 Dreamy Dough. All rights reserved.</p>
+
+  </footer>
+
+
+
+  <script>
+
+    // Realtime badge sync from localStorage
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+      const badge = document.getElementById("about-cart-count");
+
+      if (badge) badge.textContent = count;
+
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+  const badge = document.getElementById("cart-count");
+
+  if (badge) badge.textContent = count;
+
+});
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  body {
+    background: url('/images/Homepage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+}

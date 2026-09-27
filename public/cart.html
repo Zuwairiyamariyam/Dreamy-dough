@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Basket | Dreamy Dough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+  <!-- Floating Bakery Doodles -->
+  <div class="floating-doodle doodle-1"><i class="fa-solid fa-cake-candles"></i></div>
+  <div class="floating-doodle doodle-2"><i class="fa-solid fa-cookie-bite"></i></div>
+  <div class="floating-doodle doodle-3"><i class="fa-solid fa-mug-hot"></i></div>
+  <div class="floating-doodle doodle-4"><i class="fa-solid fa-wheat-awn"></i></div>
+  <header class="cart-header">
+    <div class="header-container">
+      <a href="javascript:void(0);" onclick="history.back()" class="back-pill-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back
+      </a>
+      
+      <div class="header-cart-wrap">
+        <a href="cart.html" class="cart-icon-btn" title="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-pill" id="badge-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="cart-main-wrapper">
+    <div class="cart-title-row">
+      <h1>Your Oven Basket</h1>
+      <p class="subtitle">Review your sweet selections before we warm them up for you</p>
+    </div>
+    <div class="cart-single-card" id="cart-layout">
+      <div class="table-header">
+        <span class="col-product">Selected Treat</span>
+        <span class="col-qty">Quantity</span>
+        <span class="col-price">Unit Price</span>
+        <span class="col-subtotal">Subtotal</span>
+        <span class="col-action"></span>
+      </div>
+
+      <div id="cart-items-list" class="cart-items-list">
+      </div>
+
+      <div class="cart-bottom-bar">
+        <div class="bottom-left-actions">
+          <button class="btn-secondary" onclick="window.location.href='menu.html'">
+            <i class="fa-solid fa-plus"></i> Add More
+          </button>
+          <button class="btn-clear" onclick="clearCart()">
+            <i class="fa-regular fa-trash-can"></i> Empty Basket
+          </button>
+        </div>
+
+        <div class="bottom-right-checkout">
+          <div class="total-badge-wrap">
+            <span class="total-label">Grand Total</span>
+            <strong id="cart-grand-total" class="total-amount">₹0</strong>
+          </div>
+          <button id="proceed-btn" class="btn-proceed">
+            <span>Proceed to Payment</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="empty-cart" class="empty-cart-container" style="display: none;">
+      <div class="empty-icon-wrap">
+        <i class="fa-solid fa-cookie-bite"></i>
+      </div>
+      <h2>Your tray is completely empty!</h2>
+      <p>Smells like you haven't picked your desserts yet. Let's find something delicious!</p>
+      <a href="menu.html" class="btn-explore">Browse Menu</a>
+    </div>
+  </main>
+
+  <script src="cart.js"></script>
+</body>
+</html>
