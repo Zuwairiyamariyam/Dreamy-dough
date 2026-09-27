@@ -298,26 +298,56 @@ header {
         background-color: #fef5e1 !important;
     }
 
+    header {
+        height: auto !important;
+        padding: 10px 14px !important;
+    }
+
+    .header-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .nav-links {
+        gap: 12px !important;
+        overflow-x: auto !important;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links li a {
+        font-size: 0.85rem !important;
+        white-space: nowrap !important;
+    }
+
+    .back-pill-btn {
+        padding: 6px 14px !important;
+        font-size: 0.85rem !important;
+    }
+
     .menu-section {
         padding: 0 10px !important;
-        margin: 10px auto 0 auto !important;
+        margin: 15px auto 30px auto !important;
         width: 100% !important;
     }
 
     .menu-section h2 {
-        font-size: 28px !important;
+        font-size: 32px !important;
         margin-left: 0 !important;
         text-align: center !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 16px !important;
     }
+
     .cake-box {
-        max-width: 96% !important;
-        width: 96% !important;
+        max-width: 98% !important;
+        width: 98% !important;
         margin: 0 auto !important;
-        padding: 14px 12px !important;
-        border-radius: 16px !important;
+        padding: 18px 12px !important;
+        border-radius: 18px !important;
         background: #5b2c2c !important;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
     }
 
     .cake-box li {
@@ -326,8 +356,60 @@ header {
         justify-content: space-between !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
-        padding: 9px 0 !important;
+        padding: 12px 0 !important;
         gap: 6px !important;
         border-bottom: 1px dashed rgba(255, 255, 255, 0.25) !important;
+    }
+
+    .cake-box span:first-child {
+        flex: 1 1 auto !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        margin-right: 4px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    .item-options {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+    }
+
+    .custom-cake-dropdown { margin: 0 !important; }
+
+    .dropdown-trigger {
+        padding: 5px 8px !important;
+        font-size: 11px !important;
+        border-radius: 6px !important;
+        min-width: 60px !important;
+        gap: 4px !important;
+    }
+
+    .dropdown-trigger i { font-size: 9px !important; }
+
+    .price {
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        width: auto !important;
+        text-align: right !important;
+    }
+
+    .item-buttons {
+        display: flex !important;
+        gap: 5px !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .item-buttons button {
+        padding: 5px 8px !important;
+        font-size: 0.72rem !important;
+        font-weight: 700 !important;
+        border-radius: 15px !important;
+        white-space: nowrap !important;
     }
 }
