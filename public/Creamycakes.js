@@ -16,16 +16,17 @@ function addToCart(button) {
     const nameElement = itemElement.querySelector("span") || itemElement.querySelector(".cake-name") || itemElement.children[0];
     const name = nameElement ? nameElement.textContent.trim() : "Delicious Cake";
 
-    // Quantity (dropdown irundha edukkum, illana default 1)
+    // Quantity (Custom hidden input or fallback select tag)
+    const qtyInput = itemElement.querySelector(".cake-qty-input");
     const selectElement = itemElement.querySelector("select");
-    const qty = selectElement ? (parseInt(selectElement.value) || 1) : 1;
+    const qty = qtyInput ? (parseInt(qtyInput.value, 10) || 1) : (selectElement ? (parseInt(selectElement.value, 10) || 1) : 1);
 
     // Price
     const priceElement = itemElement.querySelector(".price");
-    let price = 400; // default fallback
+    let price = 400;
     if (priceElement) {
         const priceClean = priceElement.textContent.replace(/[^0-9]/g, "");
-        price = parseInt(priceClean) || 400;
+        price = parseInt(priceClean, 10) || 400;
     }
 
     const item = { name, quantity: qty, price };
@@ -34,10 +35,11 @@ function addToCart(button) {
     cart.push(item);
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    // Cart badge update (irundha live-aa count maarum)
-    const badge = document.querySelector(".cart-count, #cart-count, sup");
+    // Cart badge update
+    const badge = document.getElementById("cart-count") || document.querySelector("header sup") || document.querySelector(".cart-count");
     if (badge) {
-        badge.textContent = cart.length;
+        const count = cart.reduce((sum, i) => sum + (i.quantity || 1), 0);
+        badge.textContent = count;
     }
 
     alert(`${name} (${qty} Kg) added to cart!`);
@@ -50,14 +52,15 @@ function buyNow(button) {
     const nameElement = itemElement.querySelector("span") || itemElement.querySelector(".cake-name") || itemElement.children[0];
     const name = nameElement ? nameElement.textContent.trim() : "Delicious Cake";
 
+    const qtyInput = itemElement.querySelector(".cake-qty-input");
     const selectElement = itemElement.querySelector("select");
-    const qty = selectElement ? (parseInt(selectElement.value) || 1) : 1;
+    const qty = qtyInput ? (parseInt(qtyInput.value, 10) || 1) : (selectElement ? (parseInt(selectElement.value, 10) || 1) : 1);
 
     const priceElement = itemElement.querySelector(".price");
     let price = 400;
     if (priceElement) {
         const priceClean = priceElement.textContent.replace(/[^0-9]/g, "");
-        price = parseInt(priceClean) || 400;
+        price = parseInt(priceClean, 10) || 400;
     }
 
     const item = { name, quantity: qty, price };
@@ -76,8 +79,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Initial cart badge count check
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const badge = document.querySelector(".cart-count, #cart-count, sup");
+    const badge = document.getElementById("cart-count") || document.querySelector("header sup") || document.querySelector(".cart-count");
     if (badge) {
-        badge.textContent = cart.length;
+        const count = cart.reduce((sum, i) => sum + (i.quantity || 1), 0);
+        badge.textContent = count;
     }
 });

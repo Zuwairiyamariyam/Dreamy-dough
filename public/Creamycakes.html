@@ -210,41 +210,106 @@
         </div>
     </section>
     
-    <script src="Creamycakes.js"></script>
     <script>
-        function toggleCakeDropdown(e, dropdown) {
-            e.stopPropagation();
-            document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
-                if (d !== dropdown) d.classList.remove('open');
-            });
-            dropdown.classList.toggle('open');
+    function toggleCakeDropdown(e, dropdown) {
+        e.stopPropagation();
+        document.querySelectorAll('.custom-cake-dropdown').forEach(d => {
+            if (d !== dropdown) d.classList.remove('open');
+        });
+        dropdown.classList.toggle('open');
+    }
+
+    function selectCakeQty(e, optionEl, basePrice) {
+        e.stopPropagation();
+        const dropdown = optionEl.closest('.custom-cake-dropdown');
+        const qty = parseInt(optionEl.getAttribute('data-value'), 10) || 1;
+        
+        const selectedVal = dropdown.querySelector('.selected-val');
+        if (selectedVal) selectedVal.textContent = optionEl.textContent;
+
+        const inputEl = dropdown.querySelector('.cake-qty-input');
+        if (inputEl) inputEl.value = qty;
+
+        dropdown.classList.remove('open');
+
+        const priceElement = dropdown.closest('li').querySelector('.price');
+        if (priceElement) {
+            priceElement.textContent = '₹' + (basePrice * qty);
+        }
+    }
+
+    function addToCart(button) {
+        const itemElement = button.closest('li');
+        if (!itemElement) return;
+
+        // Cake Name
+        const nameElement = itemElement.querySelector('span');
+        const name = nameElement ? nameElement.textContent.trim() : 'Delicious Cake';
+
+        // Quantity from hidden input or dropdown
+        const inputEl = itemElement.querySelector('.cake-qty-input');
+        const qty = inputEl ? (parseInt(inputEl.value, 10) || 1) : 1;
+
+        // Price
+        const priceElement = itemElement.querySelector('.price');
+        let price = 400;
+        if (priceElement) {
+            price = parseInt(priceElement.textContent.replace(/[^0-9]/g, ''), 10) || 400;
         }
 
-        function selectCakeQty(e, optionEl, basePrice) {
-            e.stopPropagation();
-            const dropdown = optionEl.closest('.custom-cake-dropdown');
-            const qty = parseInt(optionEl.getAttribute('data-value'), 10);
-            
-            dropdown.querySelector('.selected-val').textContent = optionEl.textContent;
-            dropdown.querySelector('.cake-qty-input').value = qty;
-            dropdown.classList.remove('open');
+        const item = { name, quantity: qty, price };
 
-            const priceElement = dropdown.closest('li').querySelector('.price');
-            if (priceElement) {
-                priceElement.textContent = '₹' + (basePrice * qty);
-            }
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        updateCartBadge();
+        alert(`${name} (${qty} Kg) added to cart!`);
+    }
+
+    function buyNow(button) {
+        const itemElement = button.closest('li');
+        if (!itemElement) return;
+
+        const nameElement = itemElement.querySelector('span');
+        const name = nameElement ? nameElement.textContent.trim() : 'Delicious Cake';
+
+        const inputEl = itemElement.querySelector('.cake-qty-input');
+        const qty = inputEl ? (parseInt(inputEl.value, 10) || 1) : 1;
+
+        const priceElement = itemElement.querySelector('.price');
+        let price = 400;
+        if (priceElement) {
+            price = parseInt(priceElement.textContent.replace(/[^0-9]/g, ''), 10) || 400;
         }
 
-        window.addEventListener('click', () => {
-            document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
-        });
+        const item = { name, quantity: qty, price };
+        localStorage.setItem('cart', JSON.stringify([item]));
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-            const badge = document.getElementById("cart-count");
-            if (badge) badge.textContent = count;
-        });
-    </script>
+        window.location.href = 'payment.html';
+    }
+
+    function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        const badge = document.getElementById('cart-count') || document.querySelector('header sup') || document.querySelector('.cart-count');
+        if (badge) badge.textContent = count;
+    }
+
+    window.addEventListener('click', () => {
+        document.querySelectorAll('.custom-cake-dropdown').forEach(d => d.classList.remove('open'));
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCartBadge();
+
+        // Connect buttons to click listeners safely
+        document.querySelectorAll('.item-buttons button:first-child')
+            .forEach(btn => btn.addEventListener('click', () => addToCart(btn)));
+
+        document.querySelectorAll('.item-buttons button:last-child')
+            .forEach(btn => btn.addEventListener('click', () => buyNow(btn)));
+    });
+</script>
 </body>
 </html>
